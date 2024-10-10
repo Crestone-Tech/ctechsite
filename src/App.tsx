@@ -9,9 +9,7 @@ function App() {
     <>
       <Header />
 
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <p>MAIN CONTENT! Coming soon =)</p>
       <Footer />
     </>
   );
