@@ -1,0 +1,9 @@
+header {
+  width: 100%;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: space-between;
+}
+a {
+    display: flex;
+}
