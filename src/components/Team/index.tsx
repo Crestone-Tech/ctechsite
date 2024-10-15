@@ -1,4 +1,22 @@
 import "./team.css";
+import TeamMemberCard from "../TeamMemberCard";
+
+const membersRowOne = [
+  { memberName: "Violet" },
+  { memberName: "Johnny" },
+  { memberName: "Gabby" },
+];
+const membersRowTwo = [
+  { memberName: "Adam" },
+  { memberName: "Cody" },
+  { memberName: "Jeff" },
+];
+
+const membersRowThree = [
+  { memberName: "Megan" },
+  { memberName: "" },
+  { memberName: "Elliott" },
+];
 
 export default function Team() {
   return (
@@ -6,19 +24,22 @@ export default function Team() {
       <div className="sectionTitle">Team</div>
 
       <div className="team-row">
-        <div className="team-member-card">Violet</div>
-        <div className="team-member-card">Johnny</div>
-        <div className="team-member-card">Gabby</div>
+        {membersRowOne.map((member, index) => (
+          <TeamMemberCard key={index} memberName={member.memberName} />
+        ))}
+        ;
       </div>
       <div className="team-row">
-        <div className="team-member-card">Adam</div>
-        <div className="team-member-card">Cody</div>
-        <div className="team-member-card">Elliott</div>
+        {membersRowTwo.map((member, index) => (
+          <TeamMemberCard key={index} memberName={member.memberName} />
+        ))}
+        ;
       </div>
       <div className="team-row">
-        <div className="team-member-card">Jeff</div>
-        <div className="team-member-card"></div>
-        <div className="team-member-card">Megan</div>
+        {membersRowThree.map((member, index) => (
+          <TeamMemberCard key={index} memberName={member.memberName} />
+        ))}
+        ;
       </div>
     </>
   );
