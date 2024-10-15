@@ -1,5 +1,6 @@
 import "./team.css";
 import TeamMemberCard from "../TeamMemberCard";
+import SectionTitle from "../SectionTitle";
 
 const membersRowOne = [
   { memberName: "Violet" },
@@ -21,7 +22,7 @@ const membersRowThree = [
 export default function Team() {
   return (
     <>
-      <div className="sectionTitle">Team</div>
+      <SectionTitle sectionTitle="Team" />
 
       <div className="team-row">
         {membersRowOne.map((member, index) => (

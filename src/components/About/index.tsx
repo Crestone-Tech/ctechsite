@@ -1,7 +1,9 @@
+import SectionTitle from "../SectionTitle"
+
 export default function About() {
   return (
     <>
-      <h2 className="d">About Us</h2>
+      <SectionTitle sectionTitle="About Us" />
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis
         repellendus quaerat nemo amet cum ex, sunt quam ad aut, accusamus
