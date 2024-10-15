@@ -1,6 +1,14 @@
 import Header from "./components/Header";
+import About from "./components/About";
+import HorizontalDivider from "./components/HorizontalDivider";
+import Team from "./components/Team";
+import Projects from "./components/Projects";
 import Footer from "./components/Footer";
+import ContactForm from "./components/Contact";
+
 import "./App.css";
+
+
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -8,8 +16,13 @@ function App() {
   return (
     <>
       <Header />
-
-      <p>MAIN CONTENT! Coming soon =)</p>
+      <About />
+      <HorizontalDivider />
+      <Team />
+      <HorizontalDivider />
+      <Projects />
+      <HorizontalDivider />
+      <ContactForm />
       <Footer />
     </>
   );
