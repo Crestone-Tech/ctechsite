@@ -1,4 +1,3 @@
-import Banner from "../Banner";
 import Nav from "../Nav";
 import "./header.css";
 export default function Header() {
