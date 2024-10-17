@@ -7,8 +7,11 @@ import {
   Tooltip,
   IconButton,
 } from "@mui/material";
-import GitHubIcon from "@mui/icons-material/GitHub";
 import SectionTitle from "../SectionTitle";
+
+import GitHubIcon from "@mui/icons-material/GitHub";
+import EmailIcon from "@mui/icons-material/Email";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 const members = [
   { memberName: "Violet" },
@@ -32,9 +35,19 @@ export default function Team() {
               <CardContent>
                 <Typography variant="h5">{member.memberName}</Typography>
               </CardContent>
-              <Tooltip title="Delete">
+              <Tooltip title="GitHub Profile">
                 <IconButton>
                   <GitHubIcon />
+                </IconButton>
+              </Tooltip>
+              <Tooltip title="Email me">
+                <IconButton>
+                  <EmailIcon />
+                </IconButton>
+              </Tooltip>
+              <Tooltip title="LinkedIn Profile">
+                <IconButton>
+                  <LinkedInIcon />
                 </IconButton>
               </Tooltip>
             </Card>
