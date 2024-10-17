@@ -1,6 +1,13 @@
 import Grid from "@mui/material/Grid2";
 
-import { Card, CardContent, Typography } from "@mui/material";
+import {
+  Card,
+  CardContent,
+  Typography,
+  Tooltip,
+  IconButton,
+} from "@mui/material";
+import GitHubIcon from "@mui/icons-material/GitHub";
 import SectionTitle from "../SectionTitle";
 
 const members = [
@@ -25,6 +32,11 @@ export default function Team() {
               <CardContent>
                 <Typography variant="h5">{member.memberName}</Typography>
               </CardContent>
+              <Tooltip title="Delete">
+                <IconButton>
+                  <GitHubIcon />
+                </IconButton>
+              </Tooltip>
             </Card>
           </Grid>
         ))}
