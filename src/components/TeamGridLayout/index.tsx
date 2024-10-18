@@ -1,30 +1,62 @@
 import Grid from "@mui/material/Grid2";
 
-import { Card, CardContent, Typography } from "@mui/material";
+import {
+  Card,
+  CardContent,
+  Typography,
+  Tooltip,
+  IconButton,
+} from "@mui/material";
 import SectionTitle from "../SectionTitle";
 
-const members = [
-  { memberName: "Violet" },
-  { memberName: "Johnny" },
-  { memberName: "Gabby" },
-  { memberName: "Adam" },
-  { memberName: "Cody" },
-  { memberName: "Jeff" },
-  { memberName: "Megan" },
-  { memberName: "Elliott" },
-];
+import GitHubIcon from "@mui/icons-material/GitHub";
+import EmailIcon from "@mui/icons-material/Email";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { membersData } from "../../data/membersData";
 
 export default function Team() {
   return (
     <>
       <SectionTitle sectionTitle="Team" />
       <Grid container spacing={2}>
-        {members.map((member, index) => (
+        {membersData.map((member, index) => (
           <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index}>
+            {/* TODO move the Card element into a child component? */}
             <Card>
               <CardContent>
-                <Typography variant="h5">{member.memberName}</Typography>
+                <Typography variant="h5">{member.name}</Typography>
               </CardContent>
+              <Tooltip title="GitHub Profile">
+                <IconButton
+                  onClick={() => {
+                    window.open(member.github);
+                  }}
+                >
+                  <GitHubIcon />
+                </IconButton>
+              </Tooltip>
+              <Tooltip title="Email me. But this doesn't work yet. Sadness.">
+                <IconButton
+                // MS Co-Pilot gave me the code below, but doing this on my machine results in an
+                // opening a new browser tab, with the mailto link in the address bar - but the tab
+                // is blank and nothing really happens.
+                //
+                // onClick={() => {
+                //   window.open(`mailto:${member.email}`);
+                // }}
+                >
+                  <EmailIcon />
+                </IconButton>
+              </Tooltip>
+              <Tooltip title="LinkedIn Profile">
+                <IconButton
+                  onClick={() => {
+                    window.open(member.linkedIn);
+                  }}
+                >
+                  <LinkedInIcon />
+                </IconButton>
+              </Tooltip>
             </Card>
           </Grid>
         ))}
