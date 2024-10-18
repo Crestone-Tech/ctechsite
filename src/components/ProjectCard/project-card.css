@@ -1,19 +1,4 @@
-.project-card-row {
-  height: auto;
-  display: flex;
-}
-
 .project-card-image {
-  width: 45%;
-  height: 150px;
-  background-color: sandybrown;
-  margin: 20px 30px 20px 30px;
-}
-
-.project-card-text {
-  width: 55%;
-  margin: 20px;
-  height: 150px;
-  background-color: sandybrown;
-  margin: 20px 30px 20px 30px;
+  border: solid black;
+  border-radius: 2%;
 }
