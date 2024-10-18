@@ -1,13 +1,5 @@
-.project-card-row {
-  height: auto;
-  display: flex;
-}
-
 .project-card-image {
-  width: 45%;
-  height: 150px;
-  background-color: sandybrown;
-  margin: 20px 30px 20px 30px;
+  height: 250px;
 }
 
 .project-card-text {
