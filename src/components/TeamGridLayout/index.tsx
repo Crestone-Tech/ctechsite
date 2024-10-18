@@ -12,52 +12,7 @@ import SectionTitle from "../SectionTitle";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import EmailIcon from "@mui/icons-material/Email";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-
-type MemberInfo = {
-  name: string;
-  github: string;
-  linkedIn: string;
-};
-
-// TODO move this type to an index.d.ts file? @Cody?
-const membersData: MemberInfo[] = [
-  {
-    name: "Violet",
-    github: "https://github.com/floweringvi",
-    linkedIn: "https://www.linkedin.com/in/violet-stanziani-a82196297/",
-  },
-  {
-    name: "Johnny",
-    github: "",
-    linkedIn: "https://www.linkedin.com/in/jonathan-baldyga-bb666b321/",
-  },
-  {
-    name: "Gabby",
-    github: "",
-    linkedIn: "https://www.linkedin.com/in/gcbelanger/",
-  },
-  {
-    name: "Adam",
-    github: "",
-    linkedIn: "https://www.linkedin.com/in/adammathis05/",
-  },
-  {
-    name: "Cody",
-    github: "",
-    linkedIn: "https://www.linkedin.com/in/steven-thaller/",
-  },
-  { name: "Jeff", github: "", linkedIn: "" },
-  {
-    name: "Megan",
-    github: "",
-    linkedIn: "https://www.linkedin.com/in/megan-mcneill/",
-  },
-  {
-    name: "Elliott",
-    github: "https://github.com/ec-davis",
-    linkedIn: "https://www.linkedin.com/in/ec-davis/",
-  },
-];
+import { membersData } from "../../data/membersData";
 
 export default function Team() {
   return (
@@ -66,6 +21,7 @@ export default function Team() {
       <Grid container spacing={2}>
         {membersData.map((member, index) => (
           <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index}>
+            {/* TODO move the Card element into a child component? */}
             <Card>
               <CardContent>
                 <Typography variant="h5">{member.name}</Typography>
@@ -79,8 +35,16 @@ export default function Team() {
                   <GitHubIcon />
                 </IconButton>
               </Tooltip>
-              <Tooltip title="Email me">
-                <IconButton>
+              <Tooltip title="Email me. But this doesn't work yet. Sadness.">
+                <IconButton
+                // MS Co-Pilot gave me the code below, but doing this on my machine results in an
+                // opening a new browser tab, with the mailto link in the address bar - but the tab
+                // is blank and nothing really happens.
+                //
+                // onClick={() => {
+                //   window.open(`mailto:${member.email}`);
+                // }}
+                >
                   <EmailIcon />
                 </IconButton>
               </Tooltip>
