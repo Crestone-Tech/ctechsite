@@ -2,7 +2,8 @@ footer {
   width: 100%;
   text-align: center;
   display: flex;
-  background-color: antiquewhite;
+  background-color: #717171;
   justify-content: center;
   align-items: center;
+  color: white
 }
