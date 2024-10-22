@@ -10,7 +10,11 @@ export default function Footer() {
         </div>
         {/* TODO: add link to repo to Icon */}
         <div>
-          <p>Designed & Built by Crestone Technology <GitHubIcon /> </p>
+          <p>Designed & Built by Crestone Technology           
+            <a href="https://github.com/your-repo" target="_blank" rel="noopener noreferrer">
+            <GitHubIcon />
+            </a> 
+          </p>
           <p>Copyright 2024</p>
         </div>
       </footer>

@@ -28,6 +28,11 @@ p {
   margin: 0.5rem 0 0;
 }
 
-p > svg {
+p > a {
   margin-left: 0.5rem; /* Add some space between text and icon */
+  color: inherit
+}
+
+a:hover {
+  transform: scale(1.25);
 }
