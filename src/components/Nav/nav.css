@@ -1,4 +1,4 @@
-nav {
+/* nav {
   display: flex;
   width: 360px;
 }
@@ -7,11 +7,12 @@ ul {
   display: flex;
   align-items: center;
   justify-content: space-around;
-}
+  
+} */
 .navbar-overlay {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 40px;
+  left: 50%;
   z-index: 10;
 }
 
@@ -26,7 +27,7 @@ ul {
 }
 
 .navbar-overlay nav ul li {
-  margin-left: 20px;
+  margin-left: 50px;
 }
 
 .navbar-overlay nav a {

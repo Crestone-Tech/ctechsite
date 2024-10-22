@@ -7,10 +7,13 @@ export default function Nav() {
           <a href="./about">About</a>
         </li>
         <li>
+          <a href="./team">Team</a>
+        </li>
+        <li>
           <a href="./projects">Projects</a>
         </li>
         <li>
-          <a href="./team">Team</a>
+          <a href="./contact">Contact Us</a>
         </li>
       </ul>
     </nav>
