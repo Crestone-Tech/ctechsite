@@ -11,7 +11,7 @@ export default function Footer() {
         {/* TODO: add link to repo to Icon */}
         <div>
           <p>Designed & Built by Crestone Technology           
-            <a href="https://github.com/your-repo" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/Crestone-Tech" target="_blank" rel="noopener noreferrer">
             <GitHubIcon />
             </a> 
           </p>
