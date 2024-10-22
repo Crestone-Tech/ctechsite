@@ -5,5 +5,29 @@ footer {
   background-color: #717171;
   justify-content: center;
   align-items: center;
-  color: white
+  color: white;
+  flex-direction: column;
+  padding: 1rem
+}
+
+img {
+  width: 100%;
+  max-width: 30%;
+  height: auto;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+p {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem 0 0;
+}
+
+p > svg {
+  margin-left: 0.5rem; /* Add some space between text and icon */
 }
