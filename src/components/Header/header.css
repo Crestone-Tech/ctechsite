@@ -1,9 +1,38 @@
-header {
+/* header {
   width: 100%;
   background-color: whitesmoke;
   display: flex;
   justify-content: space-between;
 }
 a {
-    display: flex;
+  display: flex;
+} */
+/* Container for both the main logo and the home icon */
+.logo-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.main-logo {
+  max-height: 1000px;
+  width: 100%;
+  border-bottom-left-radius: 350px;
+  opacity: 91%;
+  /* height: auto; */
+}
+
+.home-icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 50px;
+  height: 50px;
+}
+
+.home-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
