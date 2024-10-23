@@ -20,13 +20,14 @@ a {
   width: 100%;
   border-bottom-left-radius: 350px;
   opacity: 91%;
+  transition: all 0.3s ease-in-out;
   /* height: auto; */
 }
 
 .home-icon {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 40px;
+  left: 30%;
   width: 50px;
   height: 50px;
 }
@@ -35,4 +36,64 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* Media Queries */
+
+/* Large */
+@media screen and (max-width: 1024px) {
+  .main-logo {
+    max-height: 600px;
+    border-bottom-left-radius: 250px;
+  }
+
+  .home-icon {
+    top: 30px;
+    left: 25%;
+    width: 45px;
+    height: 45px;
+  }
+}
+
+/* Medium */
+@media screen and (max-width: 767px) {
+  .main-logo {
+    border-bottom-left-radius: 150px;
+  }
+
+  .home-icon {
+    top: 20px;
+    left: 20%;
+    width: 40px;
+    height: 40px;
+  }
+}
+/* Small */
+@media screen and (max-width: 480px) {
+  .main-logo {
+    max-height: 300px;
+    border-bottom-left-radius: 100px;
+  }
+
+  .home-icon {
+    top: 15px;
+    left: 15%;
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* Extra small */
+@media screen and (max-width: 300px) {
+  .main-logo {
+    max-height: 250px;
+    border-bottom-left-radius: 80px;
+  }
+
+  .home-icon {
+    top: 10px;
+    left: 10%;
+    width: 30px;
+    height: 30px;
+  }
 }

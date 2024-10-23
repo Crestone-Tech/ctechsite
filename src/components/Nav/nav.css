@@ -9,13 +9,14 @@ ul {
   justify-content: space-around;
   
 } */
+/* Container */
 .navbar-overlay {
   position: absolute;
   top: 40px;
-  left: 50%;
+  left: 40%;
   z-index: 10;
 }
-
+/* Styling */
 .navbar-overlay nav {
   background-color: transparent;
   padding: 10px;
@@ -28,10 +29,76 @@ ul {
 
 .navbar-overlay nav ul li {
   margin-left: 50px;
+  font-size: 20px;
 }
 
 .navbar-overlay nav a {
   text-decoration: none;
   color: white;
   font-weight: bold;
+}
+
+/* Media Queries */
+
+/* Large */
+@media screen and (max-width: 1024px) {
+  .navbar-overlay {
+    top: 10px;
+    left: 30%;
+  }
+
+  .navbar-overlay nav ul li {
+    margin-left: 30px;
+    font-size: 18px;
+  }
+}
+
+/* Medium */
+@media screen and (max-width: 767px) {
+  .navbar-overlay {
+    top: 10px;
+    left: 20%;
+  }
+
+  .navbar-overlay nav ul li {
+    margin-left: 20px;
+    font-size: 16px;
+  }
+}
+
+/* Small */
+@media screen and (max-width: 480px) {
+  .navbar-overlay {
+    top: 15px;
+    left: 15%;
+  }
+
+  .navbar-overlay nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-overlay nav ul li {
+    margin-left: 0;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+}
+
+/* Extra small */
+@media screen and (max-width: 300px) {
+  .navbar-overlay {
+    top: 10px;
+    left: 5%;
+  }
+
+  .navbar-overlay nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-overlay nav ul li {
+    margin-bottom: 8px;
+    font-size: 12px;
+  }
 }
