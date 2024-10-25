@@ -2,7 +2,37 @@ footer {
   width: 100%;
   text-align: center;
   display: flex;
-  background-color: antiquewhite;
+  background-color: #717171;
   justify-content: center;
   align-items: center;
+  color: white;
+  flex-direction: column;
+  padding: 1rem
+}
+
+footer img {
+  width: 100%;
+  max-width: 30%;
+  height: auto;
+}
+
+footer div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer p {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem 0 0;
+}
+
+footer p > a {
+  margin-left: 0.5rem; /* Add some space between text and icon */
+  color: inherit
+}
+
+footer a:hover {
+  transform: scale(1.25);
 }
