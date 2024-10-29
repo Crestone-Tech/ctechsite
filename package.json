@@ -4,12 +4,12 @@
   "version": "0.0.0",
   "scripts": {
     "start": "node server/server.js --ignore client",
-    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm run dev\"",
+    "client": "cd client && npm run dev",
+    "dev": "concurrently \"cd server && npm run watch\" \"cd client && npm run dev\"",
     "seed": "cd server && npm run seed",
     "build": "cd client && npm run build"
   },
   "devDependencies": {
     "concurrently": "^8.2.2"
-  },
-  "dependencies": {}
+  }
 }
