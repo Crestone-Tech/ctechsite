@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Grid from "@mui/material/Grid2";
 import SectionTitle from "../SectionTitle";
 import { membersData } from "../../data/membersData";
@@ -6,7 +6,7 @@ import TeamMemberCardFront from "../TeamMemberCardFront/index";
 import TeamMemberCardBack from "../TeamMemberCardBack/index";
 
 
-export default function Team() {
+export default function TeamGridLayout() {
     // State to track the index of the currently flipped card
     const [flippedCardIndex, setFlippedCardIndex] = useState<number | null>(null);
 
