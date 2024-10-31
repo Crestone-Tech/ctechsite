@@ -27,19 +27,13 @@ export default function TeamGridLayout() {
               <div onClick={() => toggleCard(index)}>
                 <TeamMemberCardBack
                   bio={member.bio}
-                  // memberName={member.name}
-                  // github={member.github}
-                  // email={member.email}
-                  // linkedIn={member.linkedIn}
                 />
               </div>
             ) : (
               <div onClick={() => toggleCard(index)}>
                 <TeamMemberCardFront
-                  memberName={member.name}
-                  github={member.github}
-                  email={member.email}
-                  linkedIn={member.linkedIn}
+                // passing member object to TeamMemberCardFront
+                  memberInfo={member}
                 />
               </div>
             )}

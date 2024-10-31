@@ -11,24 +11,21 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import EmailIcon from "@mui/icons-material/Email";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
+// Import the MemberInfo type
+import { MemberInfo } from "../../types/MemberInfo";
+
 interface TeamMemberCardFrontProps {
-  memberName: string;
-  github: string;
-  email: string;
-  linkedIn: string;
+  memberInfo: MemberInfo;
 }
 // TODO replace with new type
-const TeamMemberCardFront: React.FC<TeamMemberCardFrontProps> = ({
-  memberName,
-  github,
-  // email,
-  linkedIn,
-}) => {
+const TeamMemberCardFront: React.FC<TeamMemberCardFrontProps> = ({ memberInfo }) => {
+  const { name, github, /* email (add email back in with CT-45) ,*/ linkedIn } = memberInfo;
+
   return (
     <div className="team-member-card">
       <Card>
         <CardContent>
-          <Typography variant="h5">{memberName}</Typography>
+          <Typography variant="h5">{name}</Typography>
         </CardContent>
         <Tooltip title="GitHub Profile">
           <IconButton
