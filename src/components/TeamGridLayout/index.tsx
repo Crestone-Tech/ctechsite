@@ -4,15 +4,10 @@ import {
   Card,
   CardContent,
   Typography,
-  Tooltip,
-  IconButton,
 } from "@mui/material";
 import SectionTitle from "../SectionTitle";
-
-import GitHubIcon from "@mui/icons-material/GitHub";
-import EmailIcon from "@mui/icons-material/Email";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { membersData } from "../../data/membersData";
+import TeamLinkBar from "../TeamLinkBar";
 
 export default function Team() {
   return (
@@ -26,7 +21,8 @@ export default function Team() {
               <CardContent>
                 <Typography variant="h5">{member.name}</Typography>
               </CardContent>
-              <Tooltip title="GitHub Profile">
+              <TeamLinkBar member={member}/>
+              {/* <Tooltip title="GitHub Profile">
                 <IconButton
                   onClick={() => {
                     window.open(member.github);
@@ -56,7 +52,7 @@ export default function Team() {
                 >
                   <LinkedInIcon />
                 </IconButton>
-              </Tooltip>
+              </Tooltip> */}
             </Card>
           </Grid>
         ))}
