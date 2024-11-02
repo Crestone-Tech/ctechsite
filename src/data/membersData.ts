@@ -46,8 +46,8 @@ export const membersData: MemberInfo[] = [
   },
   {
     name: "Megan",
-    email: "",
-    github: "https://www.wikihow.com/Make-Slime",
+    email: "megan.e.mcneill@gmail.com",
+    github: "https://github.com/bluethreadmade",
     linkedIn: "https://www.linkedin.com/in/megan-mcneill/",
     bio: "test bioM",
   },

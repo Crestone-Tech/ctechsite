@@ -5,16 +5,16 @@ import { Tooltip, IconButton } from "@mui/material";
 import { MemberInfo } from "../../types/MemberInfo";
 
 interface TeamLinkBarProps {
-  member: MemberInfo;
+  memberInfo: MemberInfo;
 }
 
-export default function TeamLinkBar({ member }: TeamLinkBarProps) {
+export default function TeamLinkBar({ memberInfo }: TeamLinkBarProps) {
   return (
     <>
       <Tooltip title="GitHub Profile">
         <IconButton
           onClick={() => {
-            window.open(member.github);
+            window.open(memberInfo.github);
           }}
         >
           <GitHubIcon />
@@ -36,7 +36,7 @@ export default function TeamLinkBar({ member }: TeamLinkBarProps) {
       <Tooltip title="LinkedIn Profile">
         <IconButton
           onClick={() => {
-            window.open(member.linkedIn);
+            window.open(memberInfo.linkedIn);
           }}
         >
           <LinkedInIcon />
