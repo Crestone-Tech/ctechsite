@@ -5,6 +5,7 @@ import { membersData } from "../../data/membersData";
 import TeamMemberCardFront from "../TeamMemberCardFront/index";
 import TeamMemberCardBack from "../TeamMemberCardBack/index";
 
+import TeamLinkBar from "../TeamLinkBar";
 
 export default function TeamGridLayout() {
     // State to track the index of the currently flipped card
