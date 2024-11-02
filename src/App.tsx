@@ -1,6 +1,6 @@
 import Header from "./components/Header";
 import About from "./components/About";
-import Team from "./components/TeamGridLayout";
+import TeamGridLayout from "./components/TeamGridLayout";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 import ContactForm from "./components/Contact";
@@ -14,7 +14,7 @@ function App() {
     <>
       <Header />
       <About />
-      <Team />
+      <TeamGridLayout />
       <Projects />
       <ContactForm />
       <Footer />
