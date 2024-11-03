@@ -1,6 +1,7 @@
 import React from "react";
 import {
   Card,
+  CardHeader,
   CardContent,
   Typography,
   Avatar
@@ -24,9 +25,9 @@ const TeamMemberCardFront: React.FC<TeamMemberCardFrontProps> = ({ memberInfo })
 
   return (
     <div className="team-member-card">
-      <Card id="cardFront">
+      <Card >
+        <CardHeader title={name}><Typography variant="h5">{name}</Typography></CardHeader>
         <CardContent >
-          <Typography variant="h5">{name}</Typography>
           <Avatar alt={name} src={avatar} sx={{ width: 120, height: 120 }}/>
         </CardContent>
         <TeamLinkBar memberInfo={memberInfo}/>

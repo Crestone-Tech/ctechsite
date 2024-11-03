@@ -1,7 +1,7 @@
 import GitHubIcon from "@mui/icons-material/GitHub";
 import EmailIcon from "@mui/icons-material/Email";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import { Tooltip, IconButton } from "@mui/material";
+import { Tooltip, IconButton, Box } from "@mui/material";
 import { MemberInfo } from "../../types/MemberInfo";
 
 interface TeamLinkBarProps {
@@ -10,7 +10,7 @@ interface TeamLinkBarProps {
 
 export default function TeamLinkBar({ memberInfo }: TeamLinkBarProps) {
   return (
-    <>
+    <Box >
       <Tooltip title="GitHub Profile">
         <IconButton
           onClick={() => {
@@ -42,6 +42,6 @@ export default function TeamLinkBar({ memberInfo }: TeamLinkBarProps) {
           <LinkedInIcon />
         </IconButton>
       </Tooltip>
-    </>
+    </Box>
   );
 }
