@@ -18,7 +18,7 @@ export default function TeamGridLayout() {
   return (
     <>
       <SectionTitle sectionTitle="Team" />
-      <Grid container spacing={2}>
+      <Grid container spacing={2} justifyContent="center">
         {membersData.map((member, index) => (
           <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index}>
             {/* Render front or back based on the flippedCardIndex */}
