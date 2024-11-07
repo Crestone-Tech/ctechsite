@@ -8,6 +8,13 @@ a {
   display: flex;
 } */
 /* Container for both the main logo and the home icon */
+html,
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
 .logo-container {
   position: relative;
   width: 100%;
@@ -20,7 +27,6 @@ a {
   width: 100%;
   border-bottom-left-radius: 350px;
   opacity: 91%;
-  transition: all 0.3s ease-in-out;
   /* height: auto; */
 }
 
@@ -69,7 +75,7 @@ a {
   }
 }
 /* Small */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 480px) and (min-width: 320px) {
   .main-logo {
     max-height: 300px;
     border-bottom-left-radius: 100px;
@@ -84,7 +90,7 @@ a {
 }
 
 /* Extra small */
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 320px) {
   .main-logo {
     max-height: 250px;
     border-bottom-left-radius: 80px;

@@ -67,23 +67,6 @@ ul {
 }
 
 /* Small */
-@media screen and (max-width: 480px) {
-  .navbar-overlay {
-    top: 15px;
-    left: 15%;
-  }
-
-  .navbar-overlay nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .navbar-overlay nav ul li {
-    margin-left: 0;
-    margin-bottom: 10px;
-    font-size: 14px;
-  }
-}
 
 /* Extra small */
 @media screen and (max-width: 300px) {
