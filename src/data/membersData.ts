@@ -8,6 +8,7 @@ export const membersData: MemberInfo[] = [
     github: "https://www.wikihow.com/Make-Slime",
     linkedIn: "https://www.linkedin.com/in/violet-stanziani-a82196297/",
     bio: "test bioV",
+    avatar: "/team_images/Fox.png"
   },
   {
     name: "Johnny",
@@ -15,6 +16,7 @@ export const membersData: MemberInfo[] = [
     github: "https://www.wikihow.com/Make-Slime",
     linkedIn: "https://www.linkedin.com/in/jonathan-baldyga-bb666b321/",
     bio: "test bioJ",
+    avatar: "/team_images/Bear.png"
   },
   {
     name: "Gabby",
@@ -22,6 +24,7 @@ export const membersData: MemberInfo[] = [
     github: "https://www.wikihow.com/Make-Slime",
     linkedIn: "https://www.linkedin.com/in/gcbelanger/",
     bio: "test bioG",
+    avatar: "/team_images/Rabbit.png"
   },
   {
     name: "Adam",
@@ -29,6 +32,7 @@ export const membersData: MemberInfo[] = [
     github: "https://www.github.com/adammathis05",
     linkedIn: "https://www.linkedin.com/in/adammathis05/",
     bio: "test bioA",
+    avatar: "/team_images/Gecko.png"
   },
   {
     name: "Cody",
@@ -36,6 +40,7 @@ export const membersData: MemberInfo[] = [
     github: "https://www.wikihow.com/Make-Slime",
     linkedIn: "https://www.linkedin.com/in/steven-thaller/",
     bio: "test bioC",
+    avatar: "/team_images/Tortise.png"
   },
   {
     name: "Jeff",
@@ -43,13 +48,15 @@ export const membersData: MemberInfo[] = [
     github: "https://www.wikihow.com/Make-Slime",
     linkedIn: "https://www.linkedin.com/in/jeffmichael-presto-233725256/",
     bio: "test bioJ",
+    avatar: "/team_images/Parrot.png"
   },
   {
     name: "Megan",
-    email: "",
-    github: "https://www.wikihow.com/Make-Slime",
+    email: "megan.e.mcneill@gmail.com",
+    github: "https://github.com/bluethreadmade",
     linkedIn: "https://www.linkedin.com/in/megan-mcneill/",
     bio: "test bioM",
+    avatar: "/team_images/Squirrel.png"
   },
   {
     name: "Elliott",
@@ -57,5 +64,6 @@ export const membersData: MemberInfo[] = [
     github: "https://github.com/ec-davis",
     linkedIn: "https://www.linkedin.com/in/ec-davis/",
     bio: "test bioE",
+    avatar: "/team_images/Owl.png"
   },
 ];

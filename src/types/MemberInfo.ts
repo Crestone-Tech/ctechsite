@@ -4,4 +4,5 @@ export type MemberInfo = {
   github: string;
   linkedIn: string;
   bio: string;
+  avatar: string;
 };
