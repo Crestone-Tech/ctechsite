@@ -5,7 +5,7 @@ import {
   CardContent,
   Typography,
   Avatar,
-  Box
+  Box,
 } from "@mui/material";
 
 // Import the MemberInfo type
@@ -31,55 +31,65 @@ const TeamMemberCardFront: React.FC<TeamMemberCardFrontProps> = ({
       className="team-member-card"
       sx={{
         position: "relative", // Position relative for the inner content
-        width: "100%", // Make the card full width of the grid item
-        paddingTop: "100%", // Matching the padding top to the width creates a square aspect ratio
+        width: "280px", // Make the card full width of the grid item
+        aspectRatio: "1 / 1",
         overflow: "hidden", // Prevents overflow
+        display: "flex", // Use flexbox for child elements
+        flexDirection: "column", // Stack children vertically
+        justifyContent: "space-between", // Distribute the children evenly
+        alignItems: "center", // Center content horizontally
+        margin: "auto", // Center the card horizontally
+        padding:"1rem"
       }}
     >
       <CardHeader
         title={name}
         sx={{
-          pb: 0,
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
           textAlign: "center",
+          padding: "0 1rem",
+          margin:"1rem"
         }}
       >
         <Typography variant="h5">{name}</Typography>
       </CardHeader>
       <CardContent
         sx={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)", // Center the content
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
+          flexGrow: 1, // Allow this section to grow
+          p:0
         }}
       >
-        <Avatar 
-          alt={name} 
-          src={avatar} 
-          sx={{ 
-              width: 120,
-              height: 120,
-              paddingBottom: 0
-              }} />
+        <Avatar
+          alt={name}
+          src={avatar}
+          sx={{
+            // width: "20vw", // Avatar width as a percentage of viewport width
+            // height: "20vw", // Avatar height as a percentage of viewport width
+            width: "max-content", // Avatar width as a percentage of viewport width
+            height: "max-content", // Avatar height as a percentage of viewport width
+            maxWidth: "10rem", // Maximum width to prevent it from growing too large
+            maxHeight: "10rem", // Maximum height to prevent it from growing too large
+          }}
+        />
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            flexGrow: 1, // Allow this section to grow
+            px: { xs: "1rem", sm: "2rem" }, // Responsive padding for better spacing
+            // marginTop: "auto", // Keep the link bar at the bottom of the card
+                      padding: "0 1rem",
+            margin:"1rem",
+          }}
+        >
+          <TeamLinkBar memberInfo={memberInfo} />
+        </Box>
       </CardContent>
-      <Box        
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <TeamLinkBar memberInfo={memberInfo} />         
-      </Box>
     </Card>
   );
 };
