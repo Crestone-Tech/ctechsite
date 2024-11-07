@@ -31,8 +31,8 @@ const TeamMemberCardFront: React.FC<TeamMemberCardFrontProps> = ({
       className="team-member-card"
       sx={{
         position: "relative", // Position relative for the inner content
-        width: "40%", // Make the card full width of the grid item
-        paddingTop: "40%", // Matching the padding top to the width creates a square aspect ratio
+        width: "100%", // Make the card full width of the grid item
+        paddingTop: "100%", // Matching the padding top to the width creates a square aspect ratio
         overflow: "hidden", // Prevents overflow
       }}
     >
