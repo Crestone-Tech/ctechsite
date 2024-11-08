@@ -30,7 +30,7 @@ const TeamMemberCardFront: React.FC<TeamMemberCardFrontProps> = ({
     <Card
       className="team-member-card"
       sx={{
-        width: "280px",
+        maxWidth: "280px",
         aspectRatio: "1 / 1",
         overflow: "hidden", // Prevents overflow
         display: "flex", // Use flexbox for child elements
@@ -44,8 +44,7 @@ const TeamMemberCardFront: React.FC<TeamMemberCardFrontProps> = ({
         title={name}
         sx={{
           textAlign: "center",
-          padding: "0 1rem",
-          margin:"1rem"
+          padding: "0 1rem .5rem",
         }}
       >
         <Typography variant="h5">{name}</Typography>
@@ -64,10 +63,9 @@ const TeamMemberCardFront: React.FC<TeamMemberCardFrontProps> = ({
           alt={name}
           src={avatar}
           sx={{
-            width: "100%",
-            height: "100%",
-            maxWidth: "10rem", // Maximum width to prevent it from growing too large
-            maxHeight: "10rem", // Maximum height to prevent it from growing too large
+            width: "6rem", // Maximum width to prevent it from growing too large
+            height: "6rem", // Maximum height to prevent it from growing too large
+            aspectRatio: "1 / 1",
           }}
         />
         <Box
