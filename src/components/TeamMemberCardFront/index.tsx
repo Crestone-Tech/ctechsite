@@ -30,15 +30,13 @@ const TeamMemberCardFront: React.FC<TeamMemberCardFrontProps> = ({
     <Card
       className="team-member-card"
       sx={{
-        position: "relative", // Position relative for the inner content
-        width: "280px", // Make the card full width of the grid item
+        width: "280px",
         aspectRatio: "1 / 1",
         overflow: "hidden", // Prevents overflow
         display: "flex", // Use flexbox for child elements
         flexDirection: "column", // Stack children vertically
         justifyContent: "space-between", // Distribute the children evenly
         alignItems: "center", // Center content horizontally
-        margin: "auto", // Center the card horizontally
         padding:"1rem"
       }}
     >
@@ -66,10 +64,8 @@ const TeamMemberCardFront: React.FC<TeamMemberCardFrontProps> = ({
           alt={name}
           src={avatar}
           sx={{
-            // width: "20vw", // Avatar width as a percentage of viewport width
-            // height: "20vw", // Avatar height as a percentage of viewport width
-            width: "max-content", // Avatar width as a percentage of viewport width
-            height: "max-content", // Avatar height as a percentage of viewport width
+            width: "fit-content", // Avatar width as a percentage of viewport width
+            height: "fit-content", // Avatar height as a percentage of viewport width
             maxWidth: "10rem", // Maximum width to prevent it from growing too large
             maxHeight: "10rem", // Maximum height to prevent it from growing too large
           }}
@@ -81,9 +77,8 @@ const TeamMemberCardFront: React.FC<TeamMemberCardFrontProps> = ({
             justifyContent: "center",
             alignItems: "center",
             flexGrow: 1, // Allow this section to grow
-            px: { xs: "1rem", sm: "2rem" }, // Responsive padding for better spacing
-            // marginTop: "auto", // Keep the link bar at the bottom of the card
-                      padding: "0 1rem",
+            px: "2rem", 
+            padding: "0 1rem",
             margin:"1rem",
           }}
         >
