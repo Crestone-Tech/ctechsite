@@ -63,8 +63,8 @@ const TeamMemberCardFront: React.FC<TeamMemberCardFrontProps> = ({
           alt={name}
           src={avatar}
           sx={{
-            width: "6rem", // Maximum width to prevent it from growing too large
-            height: "6rem", // Maximum height to prevent it from growing too large
+            width: "6rem",
+            height: "6rem",
             aspectRatio: "1 / 1",
           }}
         />
