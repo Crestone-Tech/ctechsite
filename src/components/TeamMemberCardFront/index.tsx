@@ -64,8 +64,8 @@ const TeamMemberCardFront: React.FC<TeamMemberCardFrontProps> = ({
           alt={name}
           src={avatar}
           sx={{
-            width: "fit-content", // Avatar width as a percentage of viewport width
-            height: "fit-content", // Avatar height as a percentage of viewport width
+            width: "100%",
+            height: "100%",
             maxWidth: "10rem", // Maximum width to prevent it from growing too large
             maxHeight: "10rem", // Maximum height to prevent it from growing too large
           }}
