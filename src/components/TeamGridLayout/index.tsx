@@ -31,18 +31,22 @@ export default function TeamGridLayout() {
         display="flex"
         flexDirection="row"
         flexWrap="wrap"
-        justifyContent="center"      
-        >
+        justifyContent="center"
+      >
         {membersData.map((member, index) => (
           // This grid is the individual grid square, the breakpoint of xs: 2, sm: 4, md: 4 say that on an xs screen each each grid square is 2/4 cols, at sm it is 4/8 , at md and larger it is 4/12 the container
-          <Box 
+          <Box
             // size={{ xs: 2, sm: 4, md: 4 }}
-            margin="1rem" 
-            key={index}>
+            margin="1rem"
+            key={index}
+          >
             {/* Render front or back based on the flippedCardIndex */}
             {flippedCardIndex === index ? (
               <div onClick={() => toggleCard(index)}>
-                <TeamMemberCardBack bio={member.bio} />
+                <TeamMemberCardBack
+                  // passing member object to TeamMemberCardFront
+                  memberInfo={member}
+                />
               </div>
             ) : (
               <div onClick={() => toggleCard(index)}>
