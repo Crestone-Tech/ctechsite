@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Grid from "@mui/material/Grid2";
+import { Box } from "@mui/material";
 import SectionTitle from "../SectionTitle";
 import { membersData } from "../../data/membersData";
 import TeamMemberCardFront from "../TeamMemberCardFront/index";
@@ -16,11 +16,24 @@ export default function TeamGridLayout() {
     setFlippedCardIndex((prevIndex) => (prevIndex === index ? null : index));
   };
   return (
-    <>
+    // ToDo The px should probably be universally applied to everything on the page except the header and footer
+    <Box
+      sx={{
+        flexGrow: 1,
+        px: { xs: "2rem", sm: "4rem", md: "6rem" },
+      }}
+    >
       <SectionTitle sectionTitle="Team" />
-      <Grid container spacing={2} justifyContent="center">
+      <Box
+        display="flex"
+        flexDirection="row"
+        flexWrap="wrap"
+        justifyContent="center"      
+        >
         {membersData.map((member, index) => (
-          <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index}>
+          <Box 
+            margin="1rem" 
+            key={index}>
             {/* Render front or back based on the flippedCardIndex */}
             {flippedCardIndex === index ? (
               <div onClick={() => toggleCard(index)}>
@@ -34,9 +47,9 @@ export default function TeamGridLayout() {
                 />
               </div>
             )}
-          </Grid>
+          </Box>
         ))}
-      </Grid>
-    </>
+      </Box>
+    </Box>
   );
 }
