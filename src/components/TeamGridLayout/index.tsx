@@ -38,7 +38,7 @@ export default function TeamGridLayout() {
             {flippedCardIndex === index ? (
               <div onClick={() => toggleCard(index)}>
                 <TeamMemberCardBack
-                  // passing member object to TeamMemberCardFront
+                  // passing member object to TeamMemberCardBack
                   memberInfo={member}
                 />
               </div>
