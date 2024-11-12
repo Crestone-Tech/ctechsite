@@ -28,8 +28,8 @@ export default function TeamGridLayout() {
         display="flex"
         flexDirection="row"
         flexWrap="wrap"
-        justifyContent="center"      
-        >
+        justifyContent="center"
+      >
         {membersData.map((member, index) => (
           <Box 
             margin="1rem" 
@@ -37,7 +37,10 @@ export default function TeamGridLayout() {
             {/* Render front or back based on the flippedCardIndex */}
             {flippedCardIndex === index ? (
               <div onClick={() => toggleCard(index)}>
-                <TeamMemberCardBack bio={member.bio} />
+                <TeamMemberCardBack
+                  // passing member object to TeamMemberCardBack
+                  memberInfo={member}
+                />
               </div>
             ) : (
               <div onClick={() => toggleCard(index)}>
