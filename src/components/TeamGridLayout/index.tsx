@@ -16,7 +16,7 @@ export default function TeamGridLayout() {
     setFlippedCardIndex((prevIndex) => (prevIndex === index ? null : index));
   };
   return (
-    // The px should probably be universally applied to everything on the page except the header and footer
+    // ToDo The px should probably be universally applied to everything on the page except the header and footer
     <Box
       sx={{
         flexGrow: 1,
