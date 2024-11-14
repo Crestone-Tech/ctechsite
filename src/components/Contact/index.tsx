@@ -71,7 +71,9 @@ export default function ContactForm() {
           variant="outlined"
         />
       </Box>
-      <Button variant="outlined">Send Message</Button>
+      <Box textAlign={"center"}>
+        <Button variant="outlined">Send Message</Button>
+      </Box>
     </>
   );
 }
