@@ -29,7 +29,6 @@ export default function Header({
           <img src={logoStroked} alt="Crestone Technology icon" />
         </a>
         <div className="navbar-overlay">
-          {/* Pass the refs to Nav component */}
           <Nav
             aboutRef={aboutRef}
             teamRef={teamRef}

@@ -58,6 +58,11 @@ export default function Nav({
   const drawerList = (
     <List onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)}>
       <ListItem disablePadding>
+        <ListItemButton onClick={() => (window.location.href = "/")}>
+          <ListItemText primary="Home" />
+        </ListItemButton>
+      </ListItem>
+      <ListItem disablePadding>
         <ListItemButton onClick={() => scrollToSection("about")}>
           <ListItemText primary="About" />
         </ListItemButton>
