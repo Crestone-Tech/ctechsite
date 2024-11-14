@@ -3,4 +3,6 @@ export type ProjectInfo = {
   github: string;
   description: string;
   screenshot: string;
+  screenshotAltText: string;
+  projectPagePath: string;
 };
