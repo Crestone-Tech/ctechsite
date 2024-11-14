@@ -5,6 +5,7 @@ import Box from "@mui/material/Box";
 //import ProjectInfo and Data
 
 import { projectsData } from "../../data/projectsData";
+import ProjectCard from "../ProjectCard";
 
 export default function Projects() {
   return (
@@ -13,7 +14,7 @@ export default function Projects() {
       <Grid container spacing={2}>
         {projectsData.map((proj, index) => (
           <Box margin="1rem" key={index}>
-            {proj.name}
+            <ProjectCard projectData={proj} />
           </Box>
         ))}
       </Grid>
