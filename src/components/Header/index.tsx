@@ -1,5 +1,6 @@
 import Nav from "../Nav";
 import mainLogo from "../../assets/images/mainLogo.jpg";
+import logoStroked from "../../assets/images/logoStroked.png";
 import "../Nav/nav.css";
 import "./header.css";
 export default function Header() {
@@ -13,7 +14,7 @@ export default function Header() {
             className="main-logo"
           />
           <a href="/" className="home-icon">
-            <img src="/home_icon.jpg" alt="Crestone Technology icon" />
+            <img src={logoStroked} alt="Crestone Technology icon" />
           </a>
           <div className="navbar-overlay">
             <Nav />
