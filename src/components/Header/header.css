@@ -1,9 +1,105 @@
-header {
+/* header {
   width: 100%;
   background-color: whitesmoke;
   display: flex;
   justify-content: space-between;
 }
 a {
-    display: flex;
+  display: flex;
+} */
+/* Container for both the main logo and the home icon */
+html,
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.logo-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.main-logo {
+  max-height: 1000px;
+  width: 100%;
+  border-bottom-left-radius: 350px;
+  opacity: 91%;
+  /* height: auto; */
+}
+
+.home-icon {
+  position: absolute;
+  top: 10px;
+  left: 5%;
+  width: 200px;
+  height: 200px;
+}
+
+.home-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Media Queries */
+
+/* Large */
+@media screen and (max-width: 1024px) {
+  .main-logo {
+    max-height: 600px;
+    border-bottom-left-radius: 250px;
+  }
+
+  .home-icon {
+    top: 10px;
+    left: 5%;
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* Medium */
+@media screen and (max-width: 767px) {
+  .main-logo {
+    border-bottom-left-radius: 150px;
+  }
+
+  .home-icon {
+    top: 10px;
+    left: 5%;
+    width: 100px;
+    height: 100px;
+  }
+}
+/* Small */
+@media screen and (max-width: 480px) and (min-width: 320px) {
+  .main-logo {
+    max-height: 300px;
+    border-bottom-left-radius: 100px;
+  }
+
+  .home-icon {
+    top: 10px;
+    left: 5%;
+    width: 75px;
+    height: 75px;
+  }
+}
+
+/* Extra small */
+@media screen and (max-width: 320px) {
+  .main-logo {
+    max-height: 250px;
+    border-bottom-left-radius: 80px;
+  }
+
+  .home-icon {
+    top: 10px;
+    left: 5%;
+    width: 50px;
+    height: 50px;
+  }
 }
