@@ -1,23 +1,19 @@
 import Grid from "@mui/material/Grid2";
 import "./project-card.css";
-import {ProjectInfo} from "../../types/ProjectInfo";
-import { Card, CardContent, Typography, CardHeader} from "@mui/material";
 
-interface ProjectCardProps {
-  project: ProjectInfo;
-}
-export default function ProjectCard  ({project}:ProjectCardProps) {
+import { Card, CardContent, Typography, CardHeader} from "@mui/material";
+export default function ProjectCard() {
   return (
     <>
       <Grid size={{ xs: 12, sm: 6 }}>
         <Card>
           <CardHeader
-            title={project.name}
+            title="Nifty Project"
             sx={{
               textAlign: "center",
               padding: "0 1rem .5rem",
             }}
-          />
+          ></CardHeader>
           <CardContent
             sx={{
               display: "flex",
