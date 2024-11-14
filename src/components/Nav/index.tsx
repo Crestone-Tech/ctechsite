@@ -9,9 +9,22 @@ import {
   ListItemButton,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+
 import "./nav.css";
 
-export default function Nav() {
+interface NavProps {
+  aboutRef: React.RefObject<HTMLDivElement>;
+  teamRef: React.RefObject<HTMLDivElement>;
+  projectsRef: React.RefObject<HTMLDivElement>;
+  contactRef: React.RefObject<HTMLDivElement>;
+}
+
+export default function Nav({
+  aboutRef,
+  teamRef,
+  projectsRef,
+  contactRef,
+}: NavProps) {
   const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
   const isMobile = useMediaQuery("(max-width:480px)");
 
@@ -28,30 +41,45 @@ export default function Nav() {
       setDrawerOpen(open);
     };
 
+  const scrollToSection = (section: string) => {
+    const refMap: Record<string, React.RefObject<HTMLDivElement>> = {
+      about: aboutRef,
+      team: teamRef,
+      projects: projectsRef,
+      contact: contactRef,
+    };
+
+    const sectionRef = refMap[section];
+    if (sectionRef && sectionRef.current) {
+      sectionRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const drawerList = (
     <List onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)}>
       <ListItem disablePadding>
-        <ListItemButton component="a" href="./about">
+        <ListItemButton onClick={() => scrollToSection("about")}>
           <ListItemText primary="About" />
         </ListItemButton>
       </ListItem>
       <ListItem disablePadding>
-        <ListItemButton component="a" href="./team">
+        <ListItemButton onClick={() => scrollToSection("team")}>
           <ListItemText primary="Team" />
         </ListItemButton>
       </ListItem>
       <ListItem disablePadding>
-        <ListItemButton component="a" href="./projects">
+        <ListItemButton onClick={() => scrollToSection("projects")}>
           <ListItemText primary="Projects" />
         </ListItemButton>
       </ListItem>
       <ListItem disablePadding>
-        <ListItemButton component="a" href="./contact">
+        <ListItemButton onClick={() => scrollToSection("contact")}>
           <ListItemText primary="Contact Us" />
         </ListItemButton>
       </ListItem>
     </List>
   );
+
   return (
     <nav
       style={{
@@ -84,40 +112,19 @@ export default function Nav() {
       ) : (
         <ul>
           <li>
-            <a href="./about">About</a>
+            <a onClick={() => scrollToSection("about")}>About</a>
           </li>
           <li>
-            <a href="./team">Team</a>
+            <a onClick={() => scrollToSection("team")}>Team</a>
           </li>
           <li>
-            <a href="./projects">Projects</a>
+            <a onClick={() => scrollToSection("projects")}>Projects</a>
           </li>
           <li>
-            <a href="./contact">Contact Us</a>
+            <a onClick={() => scrollToSection("contact")}>Contact Us</a>
           </li>
         </ul>
       )}
     </nav>
   );
 }
-
-// export default function Nav() {
-//   return (
-//     <nav>
-//       <ul>
-//         <li>
-//           <a href="./about">About</a>
-//         </li>
-//         <li>
-//           <a href="./team">Team</a>
-//         </li>
-//         <li>
-//           <a href="./projects">Projects</a>
-//         </li>
-//         <li>
-//           <a href="./contact">Contact Us</a>
-//         </li>
-//       </ul>
-//     </nav>
-//   );
-// }
