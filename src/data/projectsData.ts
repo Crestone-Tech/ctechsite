@@ -1,7 +1,7 @@
 import { ProjectInfo } from "../types/ProjectInfo";
 
 // TODO move this type to an index.d.ts file? @Cody?
-export const projectData: ProjectInfo[] = [
+export const projectsData: ProjectInfo[] = [
   {
     name: "Greentrail",
     github: "https://www.wikihow.com/Make-Slime",
