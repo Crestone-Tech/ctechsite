@@ -1,67 +1,58 @@
-import Grid from "@mui/material/Grid2";
-
-import {
-  Card,
-  CardContent,
-  Typography,
-  Tooltip,
-  IconButton,
-} from "@mui/material";
+import { useState } from "react";
+import { Box } from "@mui/material";
 import SectionTitle from "../SectionTitle";
-
-import GitHubIcon from "@mui/icons-material/GitHub";
-import EmailIcon from "@mui/icons-material/Email";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { membersData } from "../../data/membersData";
+import TeamMemberCardFront from "../TeamMemberCardFront/index";
+import TeamMemberCardBack from "../TeamMemberCardBack/index";
 
-export default function Team() {
+export default function TeamGridLayout() {
+  // State to track the index of the currently flipped card
+  const [flippedCardIndex, setFlippedCardIndex] = useState<number | null>(null);
+
+  // Function to toggle the card flip state
+  const toggleCard = (index: number) => {
+    // If the clicked card is already flipped, set it to null (flip back)
+    // Otherwise, set the index of the clicked card
+    setFlippedCardIndex((prevIndex) => (prevIndex === index ? null : index));
+  };
   return (
-    <>
+    // ToDo The px should probably be universally applied to everything on the page except the header and footer
+    <Box
+      sx={{
+        flexGrow: 1,
+        px: { xs: "2rem", sm: "4rem", md: "6rem" },
+      }}
+    >
       <SectionTitle sectionTitle="Team" />
-      <Grid container spacing={2}>
+      <Box
+        display="flex"
+        flexDirection="row"
+        flexWrap="wrap"
+        justifyContent="center"
+      >
         {membersData.map((member, index) => (
-          <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index}>
-            {/* TODO move the Card element into a child component? */}
-            <Card>
-              <CardContent>
-                <Typography variant="h5">{member.name}</Typography>
-              </CardContent>
-              <Tooltip title="GitHub Profile">
-                <IconButton
-                  onClick={() => {
-                    window.open(member.github);
-                  }}
-                >
-                  <GitHubIcon />
-                </IconButton>
-              </Tooltip>
-              <Tooltip title="Email me. But this doesn't work yet. Sadness.">
-                <IconButton
-                // MS Co-Pilot gave me the code below, but doing this on my machine results in an
-                // opening a new browser tab, with the mailto link in the address bar - but the tab
-                // is blank and nothing really happens.
-                //
-                // onClick={() => {
-                //   window.open(`mailto:${member.email}`);
-                // }}
-                >
-                  <EmailIcon />
-                </IconButton>
-              </Tooltip>
-              <Tooltip title="LinkedIn Profile">
-                <IconButton
-                  onClick={() => {
-                    window.open(member.linkedIn);
-                  }}
-                >
-                  <LinkedInIcon />
-                </IconButton>
-              </Tooltip>
-            </Card>
-          </Grid>
+          <Box 
+            margin="1rem" 
+            key={index}>
+            {/* Render front or back based on the flippedCardIndex */}
+            {flippedCardIndex === index ? (
+              <div onClick={() => toggleCard(index)}>
+                <TeamMemberCardBack
+                  // passing member object to TeamMemberCardBack
+                  memberInfo={member}
+                />
+              </div>
+            ) : (
+              <div onClick={() => toggleCard(index)}>
+                <TeamMemberCardFront
+                  // passing member object to TeamMemberCardFront
+                  memberInfo={member}
+                />
+              </div>
+            )}
+          </Box>
         ))}
-        ;
-      </Grid>
-    </>
+      </Box>
+    </Box>
   );
 }

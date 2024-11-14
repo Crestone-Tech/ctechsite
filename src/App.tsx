@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import Header from "./components/Header";
 import About from "./components/About";
-import Team from "./components/TeamGridLayout";
+import TeamGridLayout from "./components/TeamGridLayout";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 import ContactForm from "./components/Contact";
@@ -26,7 +26,7 @@ function App() {
         <About />
       </div>
       <div ref={teamRef}>
-        <Team />
+        <TeamGridLayout />
       </div>
       <div ref={projectsRef}>
         <Projects />

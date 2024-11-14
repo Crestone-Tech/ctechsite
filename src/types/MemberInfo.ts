@@ -3,4 +3,6 @@ export type MemberInfo = {
   email: string;
   github: string;
   linkedIn: string;
+  bio: string;
+  avatar: string;
 };
