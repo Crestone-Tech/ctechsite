@@ -6,8 +6,8 @@ export default function Projects() {
     <>
       <SectionTitle sectionTitle="Projects" />
       <Grid container spacing={2}>
-        <ProjectCard  />
-        
+        <ProjectCard />
+        <ProjectCard />
       </Grid>
     </>
   );
