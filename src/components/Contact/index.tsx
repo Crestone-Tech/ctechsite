@@ -6,6 +6,11 @@ import Grid from "@mui/material/Grid2";
 import TextField from "@mui/material/TextField";
 import { Button } from "@mui/material";
 
+function sendEmail() {
+  alert(`send email
+    `);
+}
+
 export default function ContactForm() {
   return (
     <>
@@ -15,6 +20,7 @@ export default function ContactForm() {
         sx={{ "& .MuiTextField-root": { m: 1, width: "23ch" } }}
         noValidate
         autoComplete="off"
+        onSubmit={sendEmail}
       >
         <Grid container spacing={2}>
           <Grid>
@@ -71,8 +77,10 @@ export default function ContactForm() {
           variant="outlined"
         />
       </Box>
-      <Box textAlign={"center"}>
-        <Button variant="outlined">Send Message</Button>
+      <Box textAlign="center">
+        <Button type="submit" variant="outlined">
+          Send Message
+        </Button>
       </Box>
     </>
   );
