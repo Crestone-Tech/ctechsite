@@ -11,9 +11,29 @@ function sendEmail() {
     `);
 }
 
-export default function ContactForm() {
+export interface SimpleDialogProps {
+  open: boolean;
+  selectedValue: string;
+  onClose: (value: string) => void;
+}
+
+export default function ContactForm(props: SimpleDialogProps) {
+   const { onClose, selectedValue, open } = props;
+
+   const handleClose = () => {
+     onClose(selectedValue);
+   };
+
   return (
     <>
+      <Button variant="outlined" onClick={handleClickOpen}>
+        Open simple dialog
+      </Button>
+      <Dialog
+        selectedValue={selectedValue}
+        open={open}
+        onClose={handleClose}
+      />
       <SectionTitle sectionTitle="Contact" />
       <Box
         component="form"
