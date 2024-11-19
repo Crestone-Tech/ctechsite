@@ -4,6 +4,7 @@ import TeamGridLayout from "./components/TeamGridLayout";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 import ContactForm from "./components/Contact";
+import SimpleSlider from "./components/Carousel"
 
 import "./App.css";
 
@@ -15,6 +16,7 @@ function App() {
       <Header />
       <About />
       <TeamGridLayout />
+      <SimpleSlider />
       <Projects />
       <ContactForm />
       <Footer />

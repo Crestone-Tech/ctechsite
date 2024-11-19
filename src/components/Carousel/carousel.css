@@ -1,0 +1,23 @@
+.slick-center {
+  transform: scale(1.2); /* Centered slide 20% larger */
+  transition: transform 0.3s ease; /* Smooth transition */
+  z-index: 3; /* Center slide on top */
+}
+
+.slick-slide {
+  opacity: 0.6; /* Non-centered slides are dimmed */
+  transition: opacity 0.3s ease; /* Smooth opacity transition */
+  z-index: 1; /* Lower z-index for non-centered slides */
+}
+
+.slick-center {
+  opacity: 1;
+}
+
+.slick-next {
+  z-index: 0; /* Lower z-index for the next slide */
+}
+
+.slick-prev {
+  z-index: 0; /* Lower z-index for the previous slide */
+}
