@@ -1,7 +1,7 @@
 import React from "react";
-import ContactDlg from "../ContactDialog";
+import ContactDialog from "../ContactDialog";
 
-export default function ContactDialog() {
+export default function ContactAnchor() {
   const [open, setOpen] = React.useState(false);
 
   //   toggling dialog show/hide
@@ -17,11 +17,7 @@ export default function ContactDialog() {
     <>
       <a onClick={handleClickOpen}>Contact Us</a>
 
-      <ContactDlg
-        open={open}
-        onClose={handleClose}
-        selectedValue="flog"
-      ></ContactDlg>
+      <ContactDialog open={open} onClose={handleClose} selectedValue="flog" />
     </>
   );
 }
