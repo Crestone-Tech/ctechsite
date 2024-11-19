@@ -11,6 +11,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 
 import "./nav.css";
+import ContactAnchor from "../ContactAnchor";
 
 interface NavProps {
   aboutRef: React.RefObject<HTMLDivElement>;
@@ -126,7 +127,9 @@ export default function Nav({
             <a onClick={() => scrollToSection("projects")}>Projects</a>
           </li>
           <li>
-            <a onClick={() => scrollToSection("contact")}>Contact Us</a>
+            {/* ContactDialog is an anchor, with the means to open a dialog, wrapped into a
+            component for clarity */}
+            <ContactAnchor />
           </li>
         </ul>
       )}

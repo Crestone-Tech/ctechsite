@@ -4,7 +4,6 @@ import About from "./components/About";
 import TeamGridLayout from "./components/TeamGridLayout";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
-import ContactForm from "./components/Contact";
 
 import "./App.css";
 
@@ -30,9 +29,6 @@ function App() {
       </div>
       <div ref={projectsRef}>
         <Projects />
-      </div>
-      <div ref={contactRef}>
-        <ContactForm />
       </div>
       <Footer />
     </>
