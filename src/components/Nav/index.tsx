@@ -11,6 +11,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 
 import "./nav.css";
+import ContactDialog from "../ContactAnchor";
 
 interface NavProps {
   aboutRef: React.RefObject<HTMLDivElement>;
@@ -126,7 +127,7 @@ export default function Nav({
             <a onClick={() => scrollToSection("projects")}>Projects</a>
           </li>
           <li>
-            <a onClick={() => scrollToSection("contact")}>Contact Us</a>
+            <ContactDialog />
           </li>
         </ul>
       )}
