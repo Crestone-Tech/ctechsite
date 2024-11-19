@@ -6,7 +6,6 @@ import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 
 import "./App.css";
-import ContactDialog from "./components/ContactDialog";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -16,11 +15,6 @@ function App() {
   const contactRef = useRef<HTMLDivElement | null>(null);
   return (
     <>
-    {/* TODO move back to correct place */}
-      <div ref={contactRef}>
-        <ContactDialog />
-      </div>
-
       <Header
         aboutRef={aboutRef}
         teamRef={teamRef}
@@ -36,7 +30,6 @@ function App() {
       <div ref={projectsRef}>
         <Projects />
       </div>
-
       <Footer />
     </>
   );
