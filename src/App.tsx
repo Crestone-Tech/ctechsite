@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import Header from "./components/Header";
 import About from "./components/About";
 import TeamGridLayout from "./components/TeamGridLayout";
