@@ -4,7 +4,7 @@ import { Box, Typography } from "@mui/material";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import "./carousel.css";
+// import "./carousel.css";
 
 export default function SimpleSlider() {
   const settings = {
@@ -19,8 +19,41 @@ export default function SimpleSlider() {
 
   return (
     <Box
+      // turns the box into a div html component
+      component="div"
       className="slider-container"
-      sx={{ px: "2rem", maxWidth: "1200px", margin: "0 auto" }}
+      sx={{
+        px: "2rem",
+        py: "10rem",
+        maxWidth: "1200px",
+        margin: "auto",
+        overflow: "visible",
+        // target whole carousel
+        ".slick-list": {
+          overflowY: "visible",
+          overflowX: "clip",
+        },
+        // target all slides
+        ".slick-slide": {
+          // position relative allows z index to work
+          position: "relative",
+          justifyContent: "center",
+          alignItems: "center",
+        },
+        // target previous arrow
+        ".slick-prev": { left: 10, zIndex: 1 },
+        // target next arrow
+        ".slick-next": { right: 10, zIndex: 1 },
+        // target centered slide
+        ".slick-center": {
+          transform: "scale(1.2)",
+          zIndex: 5,
+          opacity: 1,
+          transformOrigin: "center", // Ensure scaling happens from the center
+        },
+        // target the visible slides that are not the centered slide
+        ".slick-active:not(.slick-center)": { opacity: 0.5, zIndex: 0 },
+      }}
     >
       <Slider {...settings}>
         <div>
@@ -30,6 +63,10 @@ export default function SimpleSlider() {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              height: "200px", // Add fixed height to ensure consistent slide height
+              width: "100%", // Ensure the width is dynamic
+              minHeight: "200px", // Ensure minimum height is maintained
+              borderRadius: "1rem",
             }}
           >
             <Typography>Slide 1</Typography>
@@ -42,6 +79,9 @@ export default function SimpleSlider() {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              height: "200px", // Add fixed height to ensure consistent slide height
+              width: "100%", // Ensure the width is dynamic
+              minHeight: "200px", // Ensure minimum height is maintained
             }}
           >
             <Typography>Slide 2</Typography>
@@ -54,6 +94,9 @@ export default function SimpleSlider() {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              height: "200px", // Add fixed height to ensure consistent slide height
+              width: "100%", // Ensure the width is dynamic
+              minHeight: "200px", // Ensure minimum height is maintained
             }}
           >
             <Typography>Slide 3</Typography>
@@ -66,6 +109,9 @@ export default function SimpleSlider() {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              height: "200px", // Add fixed height to ensure consistent slide height
+              width: "100%", // Ensure the width is dynamic
+              minHeight: "200px", // Ensure minimum height is maintained
             }}
           >
             <Typography>Slide 4</Typography>
@@ -78,6 +124,9 @@ export default function SimpleSlider() {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              height: "200px", // Add fixed height to ensure consistent slide height
+              width: "100%", // Ensure the width is dynamic
+              minHeight: "200px", // Ensure minimum height is maintained
             }}
           >
             <Typography>Slide 5</Typography>
