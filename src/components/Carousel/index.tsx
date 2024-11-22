@@ -1,5 +1,11 @@
 import Slider from "react-slick";
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
+
+// bring in team member data to render in cards
+import { membersData } from "../../data/membersData";
+
+// bring in teammembercardfront
+import TeamMemberCardFront from "../TeamMemberCardFront";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -12,9 +18,10 @@ export default function SimpleSlider() {
     centerMode: true,
     infinite: true,
     centerPadding: "50px", // Space between center and adjacent slides
-    slidesToShow: 3, // Display 3 slides at once
+    slidesToShow: 5, // Number of slides to display at once
     speed: 500, // Transition speed
     arrows: true, // Enable navigation arrows
+    swipeToSlide: true,
   };
 
   return (
@@ -23,7 +30,7 @@ export default function SimpleSlider() {
       component="div"
       className="slider-container"
       sx={{
-        px: "2rem",
+        px: "0rem",
         py: "10rem",
         maxWidth: "1200px",
         margin: "auto",
@@ -39,6 +46,8 @@ export default function SimpleSlider() {
           position: "relative",
           justifyContent: "center",
           alignItems: "center",
+          display: "flex",
+          p:"0",
         },
         // target previous arrow
         ".slick-prev": { left: 10, zIndex: 1 },
@@ -52,86 +61,27 @@ export default function SimpleSlider() {
           transformOrigin: "center", // Ensure scaling happens from the center
         },
         // target the visible slides that are not the centered slide
-        ".slick-active:not(.slick-center)": { opacity: 0.5, zIndex: 0 },
+        ".slick-active:not(.slick-center)": {
+          opacity: 0.5,
+          zIndex: 0,
+        },
       }}
     >
       <Slider {...settings}>
-        <div>
-          <Box
-            sx={{
-              backgroundColor: "red",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              height: "200px", // Add fixed height to ensure consistent slide height
-              width: "100%", // Ensure the width is dynamic
-              minHeight: "200px", // Ensure minimum height is maintained
-              borderRadius: "1rem",
-            }}
-          >
-            <Typography>Slide 1</Typography>
-          </Box>
-        </div>
-        <div>
-          <Box
-            sx={{
-              backgroundColor: "blue",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              height: "200px", // Add fixed height to ensure consistent slide height
-              width: "100%", // Ensure the width is dynamic
-              minHeight: "200px", // Ensure minimum height is maintained
-            }}
-          >
-            <Typography>Slide 2</Typography>
-          </Box>
-        </div>
-        <div>
-          <Box
-            sx={{
-              backgroundColor: "green",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              height: "200px", // Add fixed height to ensure consistent slide height
-              width: "100%", // Ensure the width is dynamic
-              minHeight: "200px", // Ensure minimum height is maintained
-            }}
-          >
-            <Typography>Slide 3</Typography>
-          </Box>
-        </div>
-        <div>
-          <Box
-            sx={{
-              backgroundColor: "orange",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              height: "200px", // Add fixed height to ensure consistent slide height
-              width: "100%", // Ensure the width is dynamic
-              minHeight: "200px", // Ensure minimum height is maintained
-            }}
-          >
-            <Typography>Slide 4</Typography>
-          </Box>
-        </div>
-        <div>
-          <Box
-            sx={{
-              backgroundColor: "purple",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              height: "200px", // Add fixed height to ensure consistent slide height
-              width: "100%", // Ensure the width is dynamic
-              minHeight: "200px", // Ensure minimum height is maintained
-            }}
-          >
-            <Typography>Slide 5</Typography>
-          </Box>
-        </div>
+        {membersData.map((member, index) => (
+          <div key={index}>
+            <Box
+              sx={{
+                margin: "1rem",
+              }}
+            >
+              <TeamMemberCardFront
+                // passing member object to TeamMemberCardFront
+                memberInfo={member}
+              />
+            </Box>
+          </div>
+        ))}
       </Slider>
     </Box>
   );
