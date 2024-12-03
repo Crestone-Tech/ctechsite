@@ -1,4 +1,5 @@
 import SectionTitle from "../SectionTitle";
+import "./about.css";
 
 export default function About() {
   return (
