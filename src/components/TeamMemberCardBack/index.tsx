@@ -1,4 +1,3 @@
-import React from "react";
 import { Card, CardContent, Typography, Avatar, Box } from "@mui/material";
 
 // Import the MemberInfo type

@@ -1,10 +1,96 @@
-nav {
-  display: flex;
-  width: 360px;
+/* Container */
+.navbar-overlay {
+  position: absolute;
+  top: 40px;
+  left: 40%;
+  z-index: 10;
 }
-ul {
-  width: 100%;
+/* Drawer */
+.icon-container {
+  position: fixed;
+  top: 10px;
+  right: 30px;
+  z-index: 100;
+}
+
+/* Styling */
+.navbar-overlay nav {
+  background-color: transparent;
+  padding: 10px;
+}
+
+.navbar-overlay nav ul {
   display: flex;
-  align-items: center;
-  justify-content: space-around;
+  list-style-type: none;
+}
+
+.navbar-overlay nav ul li {
+  margin-left: 50px;
+  font-size: 20px;
+}
+
+.navbar-overlay nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: normal;
+}
+nav li {
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+}
+nav li:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+nav li.active {
+  color: #fff;
+  transform: scale(1.1);
+}
+/* Media Queries */
+
+/* Large */
+@media screen and (max-width: 1024px) {
+  .navbar-overlay {
+    top: 10px;
+    left: 30%;
+  }
+
+  .navbar-overlay nav ul li {
+    margin-left: 30px;
+    font-size: 18px;
+  }
+}
+
+/* Medium */
+@media screen and (max-width: 767px) {
+  .navbar-overlay {
+    top: 10px;
+    left: 20%;
+  }
+
+  .navbar-overlay nav ul li {
+    margin-left: 20px;
+    font-size: 16px;
+  }
+}
+
+/* Small */
+
+/* Extra small */
+@media screen and (max-width: 300px) {
+  .navbar-overlay {
+    top: 10px;
+    left: 5%;
+  }
+
+  .navbar-overlay nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-overlay nav ul li {
+    margin-bottom: 8px;
+    font-size: 12px;
+  }
 }

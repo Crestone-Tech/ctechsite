@@ -1,27 +1,46 @@
 import Grid from "@mui/material/Grid2";
+import { Card, CardContent, Typography, CardHeader } from "@mui/material";
+
+// import the CSS
 import "./project-card.css";
-import { Card, CardContent, Typography } from "@mui/material";
-export default function ProjectCard() {
+
+// Import the ProjectInfo type
+import {ProjectInfo} from '../../types/ProjectInfo';
+
+interface ProjectCardProps {
+  projectData: ProjectInfo;
+}
+
+export default function ProjectCard({projectData}: ProjectCardProps) {
   return (
     <>
       <Grid size={{ xs: 12, sm: 6 }}>
         <Card>
-          <CardContent>
+          <CardHeader
+            title={projectData.name}
+            sx={{
+              textAlign: "center",
+              padding: "0 1rem .5rem",
+            }}
+          />
+          <CardContent
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              flexGrow: 1, // Allow this section to grow
+              p: 0,
+            }}
+          >
             <img
-              className="project-card-image"
-              srcSet={`/greentrail-project.jpg?w=248&fit=crop&auto=format&dpr=2 4x`}
+              srcSet={`${projectData.screenshot}?w=248&dpr=2 4x`}
               // ELLIOTT: I found this code, that uses both srcSet and src, in the MUI website. I do not fully understand it.
-              src={`/greentrail-project.jpg?w=248&fit=crop&auto=format`}
+              src={projectData.screenshot}
               loading="lazy"
-              alt="Greentrail application screen"
+              alt="NEED ALTO TEXTO"
             />
-            <Typography variant="h6">Project Name</Typography>
-            <Typography>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-              veritatis enim facilis labore qui illum ipsam quod, eius vero,
-              accusantium itaque et aliquid repudiandae reiciendis perspiciatis
-              cum ipsa consectetur distinctio!
-            </Typography>
+            <Typography>{projectData.description}</Typography>
           </CardContent>
         </Card>
       </Grid>
