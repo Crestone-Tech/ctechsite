@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import About from "./components/About";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
+import TeamSection from "./components/TeamSection";
 
 import "./App.css";
 
@@ -24,7 +25,7 @@ function App() {
         <About />
       </div>
       <div ref={teamRef}>
-        <TeamGridLayout />
+        <TeamSection />
       </div>
       <div ref={projectsRef}>
         <Projects />
