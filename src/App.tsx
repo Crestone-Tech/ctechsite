@@ -1,10 +1,9 @@
 import Header from "./components/Header";
 import About from "./components/About";
-import TeamGridLayout from "./components/TeamGridLayout";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 import ContactForm from "./components/Contact";
-import SimpleSlider from "./components/Carousel"
+import TeamSection from "./components/TeamSection"
 
 import "./App.css";
 
@@ -15,8 +14,7 @@ function App() {
     <>
       <Header />
       <About />
-      <TeamGridLayout />
-      <SimpleSlider />
+      <TeamSection />
       <Projects />
       <ContactForm />
       <Footer />
