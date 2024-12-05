@@ -1,5 +1,19 @@
+// TODO: remove if still unused
 .banner {
   width: 100%;
   background-color: seagreen;
+  text-align: center;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-top: 10px;
+  text-align: justify;
+}
+.aboutContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
   text-align: center;
 }
