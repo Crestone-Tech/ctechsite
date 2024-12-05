@@ -31,34 +31,36 @@ const TeamMemberCardFront: React.FC<TeamMemberCardFrontProps> = ({
       className="team-member-card"
       sx={{
         maxWidth: "280px",
+        minWidth: "200px",
         aspectRatio: "1 / 1", //sets height/width ratio
-        overflow: "hidden", // Prevents overflow
         display: "flex", // Use flexbox for child elements
         flexDirection: "column", // Stack children vertically
         justifyContent: "space-between", // Distribute the children evenly
         alignItems: "center", // Center content horizontally
-        padding:"1rem"
+        padding: "1rem",
+        height: "auto",
       }}
     >
-      <CardHeader
-        title={name}
-        sx={{
-          textAlign: "center",
-          padding: "0 1rem .5rem",
-        }}
-      >
-        <Typography variant="h5">{name}</Typography>
-      </CardHeader>
       <CardContent
         sx={{
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          flexGrow: 1, // Allow this section to grow
-          p:0
+          p: "0",
+          height: "auto", // Let content dictate height
+          flex: 1, // Allow content to fill the available space
         }}
       >
+        <CardHeader
+          title={name}
+          sx={{
+            textAlign: "center",
+            padding: "0 1rem .5rem",
+          }}
+        >
+          <Typography variant="h5">{name}</Typography>
+        </CardHeader>
         <Avatar
           alt={name}
           src={avatar}
@@ -74,10 +76,8 @@ const TeamMemberCardFront: React.FC<TeamMemberCardFrontProps> = ({
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            flexGrow: 1, // Allow this section to grow
-            px: "2rem", 
-            padding: "0 1rem",
-            margin:"1rem",
+            margin: "1rem",
+            mb: 0,
           }}
         >
           <TeamLinkBar memberInfo={memberInfo} />
