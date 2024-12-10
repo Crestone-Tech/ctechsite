@@ -10,13 +10,23 @@ interface TeamLinkBarProps {
 
 export default function TeamLinkBar({ memberInfo }: TeamLinkBarProps) {
   return (
-    <Box >
+    <Box 
+ >
       <Tooltip title="GitHub Profile">
         <IconButton
           onClick={() => {
             window.open(memberInfo.github);
           }}
+          sx={{
+            minWidth: "40px",  // Set a min size for the icon button
+            maxWidth: "60px",  // Set a max size for the icon button
+            fontSize: "1.5rem",  // Default size for the icon
+            "& .MuiSvgIcon-root": {
+              fontSize: "inherit",  // Inherit the font size from the IconButton
+            },
+          }}
         >
+          
           <GitHubIcon />
         </IconButton>
       </Tooltip>
