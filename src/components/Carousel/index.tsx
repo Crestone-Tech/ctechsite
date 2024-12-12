@@ -4,8 +4,10 @@ import { Box } from "@mui/material";
 // bring in team member data to render in cards
 import { membersData } from "../../data/membersData";
 
-// bring in teammembercardfront
+// bring in teammembercardfront and back
 import TeamMemberCardFront from "../TeamMemberCardFront";
+import TeamMemberCardBack from "../TeamMemberCardBack/index";
+
 
 // Slick slider imports
 import Slider from "react-slick";
@@ -15,6 +17,16 @@ import "slick-carousel/slick/slick-theme.css";
 export default function TeamCarousel() {
   // setup the state variable and setter for the display index of each slide (display index = data-index of className slide-content), setting initial data-index to 0
   const [displayIndex, setDisplayIndex] = useState<number>(0);
+
+  // State to track the index of the currently flipped card
+  const [flippedCardIndex, setFlippedCardIndex] = useState<number | null>(null);
+
+  // Function to toggle the card flip state
+  const toggleCard = (index: number) => {
+    // If the clicked card is already flipped, set it to null (flip back)
+    // Otherwise, set the index of the clicked card
+    setFlippedCardIndex((prevIndex) => (prevIndex === index ? null : index));
+  };
 
   // Function to calculate styles based on the slide-content's data-index (0 being the center -1 -2 etc to the left and 1 2 etc to the right)
   const indexedStyles = (dataIndex: number) => {
@@ -104,10 +116,22 @@ export default function TeamCarousel() {
               }}
               data-index={dataIndex} // Set data-index attribute
             >
-              <TeamMemberCardFront
-                // passing member object to TeamMemberCardFront
-                memberInfo={member}
-              />
+              {/* Render front or back based on the flippedCardIndex */}
+            {flippedCardIndex === index ? (
+              <div onClick={() => toggleCard(index)}>
+                <TeamMemberCardBack
+                  // passing member object to TeamMemberCardBack
+                  memberInfo={member}
+                />
+              </div>
+            ) : (
+              <div onClick={() => toggleCard(index)}>
+                <TeamMemberCardFront
+                  // passing member object to TeamMemberCardFront
+                  memberInfo={member}
+                />
+              </div>
+            )}
             </Box>
           );
         })}
