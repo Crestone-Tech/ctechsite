@@ -1,7 +1,7 @@
 import { Dialog, DialogActions, DialogTitle, Button } from "@mui/material";
 import Grid from "@mui/material/Grid2";
-import TextField from "@mui/material/TextField";
-import FormHelperText from "@mui/material/FormHelperText";
+// import TextField from "@mui/material/TextField";
+// import FormHelperText from "@mui/material/FormHelperText";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
@@ -31,7 +31,8 @@ export default function ContactDialog(props: ContactDialogProps) {
                 <br />
                 Have a question about our <br /> services?
               </Typography>
-              {/* <TextField
+              {/* commented fields preserve the work done earlier for a form that would send an email
+              <TextField
                 id="first-name"
                 label="First Name"
                 required
