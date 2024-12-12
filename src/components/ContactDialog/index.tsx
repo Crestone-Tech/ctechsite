@@ -2,7 +2,7 @@ import { Dialog, DialogActions, DialogTitle, Button } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import TextField from "@mui/material/TextField";
 import FormHelperText from "@mui/material/FormHelperText";
-
+import Typography from "@mui/material/Typography";
 export interface ContactDialogProps {
   open: boolean;
   selectedValue: string;
@@ -21,25 +21,36 @@ export default function ContactDialog(props: ContactDialogProps) {
         <Grid container spacing={2} padding={4}>
           <Grid container spacing={3} padding={2}>
             <Grid>
-              <TextField
+              <Typography variant="body1">
+                Want to join our team?
+                <br />
+                Send feedback on the website?
+                <br />
+                Have a question about our services?
+              </Typography>
+              {/* <TextField
                 id="first-name"
                 label="First Name"
                 required
                 variant="standard"
                 fullWidth
-              />
+              /> */}
             </Grid>
             <Grid>
-              <TextField
+              <Typography variant="body1">
+                <br />
+                <a href="mailto:hello@crestonetech.com">hello@crestonetech.com</a>
+              </Typography>
+              {/* <TextField
                 id="last-name"
                 label="Last Name"
                 required
                 variant="standard"
                 fullWidth
-              />
+              /> */}
             </Grid>
           </Grid>
-          <Grid padding={2}>
+          {/* <Grid padding={2}>
             <TextField
               id="email"
               label="Email"
@@ -70,11 +81,11 @@ export default function ContactDialog(props: ContactDialogProps) {
               placeholder="Message"
               sx={{ marginTop: 2 }} // Add spacing above
             />
-          </Grid>
+          </Grid> */}
         </Grid>
         <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
-          <Button type="submit">Send Message</Button>
+          <Button onClick={handleClose}>Close</Button>
+          {/* <Button type="submit">Send Message</Button> */}
         </DialogActions>
       </Dialog>
     </>
