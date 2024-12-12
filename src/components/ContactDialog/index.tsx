@@ -3,6 +3,9 @@ import Grid from "@mui/material/Grid2";
 import TextField from "@mui/material/TextField";
 import FormHelperText from "@mui/material/FormHelperText";
 import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
+import ContentCopyIcon from "@mui/icons-material/ContentCopy";
+
 export interface ContactDialogProps {
   open: boolean;
   selectedValue: string;
@@ -26,7 +29,7 @@ export default function ContactDialog(props: ContactDialogProps) {
                 <br />
                 Send feedback on the website?
                 <br />
-                Have a question about our services?
+                Have a question about our <br /> services?
               </Typography>
               {/* <TextField
                 id="first-name"
@@ -39,7 +42,16 @@ export default function ContactDialog(props: ContactDialogProps) {
             <Grid>
               <Typography variant="body1">
                 <br />
-                <a href="mailto:hello@crestonetech.com">hello@crestonetech.com</a>
+                hello@crestonetech.com
+                <IconButton
+                  onClick={() => {
+                    navigator.clipboard.writeText("hello@crestonetech.com");
+                  }}
+                  size="small"
+                  sx={{ ml: 1 }}
+                >
+                  <ContentCopyIcon fontSize="small" />
+                </IconButton>
               </Typography>
               {/* <TextField
                 id="last-name"
