@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Box } from "@mui/material";
 
 // bring in team member data to render in cards
@@ -8,15 +8,16 @@ import { membersData } from "../../data/membersData";
 import TeamMemberCardFront from "../TeamMemberCardFront";
 import TeamMemberCardBack from "../TeamMemberCardBack/index";
 
-
 // Slick slider imports
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export default function TeamCarousel() {
+  const sliderRef = useRef<Slider | null>(null);
+
   // setup the state variable and setter for the display index of each slide (display index = data-index of className slide-content), setting initial data-index to 0
-  const [displayIndex, setDisplayIndex] = useState<number>(0);
+  const [centerSlideIndex, setCenterSlideIndex] = useState<number>(0);
 
   // State to track the index of the currently flipped card
   const [flippedCardIndex, setFlippedCardIndex] = useState<number | null>(null);
@@ -29,8 +30,8 @@ export default function TeamCarousel() {
   };
 
   // Function to calculate styles based on the slide-content's data-index (0 being the center -1 -2 etc to the left and 1 2 etc to the right)
-  const indexedStyles = (dataIndex: number) => {
-    const distance = Math.abs(dataIndex); // absolute value of data-index
+  const indexedStyles = (displayIndex: number) => {
+    const distance = Math.abs(displayIndex); // absolute value of data-index
     const scale = distance === 0 ? 1.2 : 1 - 0.0 * distance; // Active slide is scaled up to 1.2, other slides are scalled down in relation to distance
     const opacity = distance === 0 ? 1 : 1 - 0.5 * distance; // Active slide has full opacity, other slides have lower opacity in relation to distance
     const zIndex = distance === 0 ? 5 : 5 - distance; // Active slide has a higher z-index, other slides have lower zIndex in relation to distance
@@ -50,10 +51,12 @@ export default function TeamCarousel() {
     centerPadding: "0px", // Space between center and adjacent slides
     slidesToShow: 3, // Number of slides to display at once
     speed: 100, // Transition speed in ms
-    arrows: true, // Enable navigation arrows
+    ref: sliderRef,
     // afterChange is an event in react slick that detects when the active slide changes, we are using that event to update the displayIndex state
     afterChange: (index: number) => {
-      setDisplayIndex(index);
+      // Reset flippedCardIndex to null when slide changes
+      setFlippedCardIndex(null);
+      setCenterSlideIndex(index);
     },
   };
 
@@ -90,7 +93,7 @@ export default function TeamCarousel() {
         ".slick-prev:before, .slick-next:before": {
           zIndex: 1,
           color: "#21434D",
-          fontSize: "1.5rem"
+          fontSize: "1.5rem",
         },
         // target previous arrow
         ".slick-prev": { left: -25 },
@@ -103,35 +106,39 @@ export default function TeamCarousel() {
           // set a variable for the total number of slides
           const totalSlides = membersData.length;
           // Each slide gets a data-index attribute to map its index with its style. index is the index of the data in membersData. The dataIndex calcuation account for the wrapping of the infinite carousel (ie the last slide being index 8 and the slide following it being index 0). It calculates 0 at the center position negative whole numbers to the left and postive whoel numbers to the right.
-          const dataIndex =
-            ((((index - displayIndex + Math.floor(totalSlides / 2)) % totalSlides) + totalSlides) % totalSlides) - Math.floor(totalSlides / 2);
+          const displayIndex =
+            ((((index - centerSlideIndex + Math.floor(totalSlides / 2)) %
+              totalSlides) +
+              totalSlides) %
+              totalSlides) -
+            Math.floor(totalSlides / 2);
           return (
             <Box
               className="slide-content"
               key={index}
               sx={{
-                ...indexedStyles(dataIndex), // Apply styles based on data-index
+                ...indexedStyles(displayIndex), // Apply styles based on data-index
                 position: "relative",
                 margin: "1rem",
               }}
-              data-index={dataIndex} // Set data-index attribute
+              display-index={displayIndex} // Set data-index attribute
             >
               {/* Render front or back based on the flippedCardIndex */}
-            {flippedCardIndex === index ? (
-              <div onClick={() => toggleCard(index)}>
-                <TeamMemberCardBack
-                  // passing member object to TeamMemberCardBack
-                  memberInfo={member}
-                />
-              </div>
-            ) : (
-              <div onClick={() => toggleCard(index)}>
-                <TeamMemberCardFront
-                  // passing member object to TeamMemberCardFront
-                  memberInfo={member}
-                />
-              </div>
-            )}
+              {flippedCardIndex === index ? (
+                <div onClick={() => toggleCard(index)}>
+                  <TeamMemberCardBack
+                    // passing member object to TeamMemberCardBack
+                    memberInfo={member}
+                  />
+                </div>
+              ) : (
+                <div onClick={() => toggleCard(index)}>
+                  <TeamMemberCardFront
+                    // passing member object to TeamMemberCardFront
+                    memberInfo={member}
+                  />
+                </div>
+              )}
             </Box>
           );
         })}
