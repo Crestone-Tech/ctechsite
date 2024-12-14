@@ -32,14 +32,16 @@ export default function TeamCarousel() {
   // Function to calculate styles based on the slide-content's data-index (0 being the center -1 -2 etc to the left and 1 2 etc to the right)
   const indexedStyles = (displayIndex: number) => {
     const distance = Math.abs(displayIndex); // absolute value of data-index
-    const scale = distance === 0 ? 1.2 : 1 - 0.0 * distance; // Active slide is scaled up to 1.2, other slides are scalled down in relation to distance
-    const opacity = distance === 0 ? 1 : 1 - 0.5 * distance; // Active slide has full opacity, other slides have lower opacity in relation to distance
+    const scale = distance === 0 ? 1.2 : 1 - 0.2 * distance; // Active slide is scaled up to 1.2, other slides are scalled down in relation to distance
+    // const opacity = distance === 0 ? 1 : 1 - 0.25 * distance; // Active slide has full opacity, other slides have lower opacity in relation to distance
     const zIndex = distance === 0 ? 5 : 5 - distance; // Active slide has a higher z-index, other slides have lower zIndex in relation to distance
+    const grayscale = distance === 0 ? 0 : 20 * distance; // The further away, the dimmer the slide becomes
 
     return {
       transform: `scale(${scale})`,
-      opacity: opacity,
+      // opacity: opacity,
       zIndex: zIndex,
+      filter: `grayscale(${grayscale})`,
     };
   };
 
@@ -49,7 +51,7 @@ export default function TeamCarousel() {
     centerMode: true,
     infinite: true,
     centerPadding: "0px", // Space between center and adjacent slides
-    slidesToShow: 3, // Number of slides to display at once
+    slidesToShow: 5, // Number of slides to display at once
     speed: 100, // Transition speed in ms
     ref: sliderRef,
     // afterChange is an event in react slick that detects when the active slide changes, we are using that event to update the displayIndex state
@@ -68,7 +70,7 @@ export default function TeamCarousel() {
       sx={{
         px: "0rem",
         py: "10rem",
-        maxWidth: "500px",
+        maxWidth: "700px",
         margin: "auto",
         overflow: "visible",
         // target whole carousel
@@ -95,10 +97,6 @@ export default function TeamCarousel() {
           color: "#21434D",
           fontSize: "1.5rem",
         },
-        // target previous arrow
-        ".slick-prev": { left: -25 },
-        // target next arrow
-        ".slick-next": { right: -25 },
       }}
     >
       <Slider {...settings}>
