@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { Box } from "@mui/material";
 
 // bring in team member data to render in cards
@@ -14,8 +14,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export default function TeamCarousel() {
-  const sliderRef = useRef<Slider | null>(null);
-
   // setup the state variable and setter for the display index of each slide (display index = data-index of className slide-content), setting initial data-index to 0
   const [centerSlideIndex, setCenterSlideIndex] = useState<number>(0);
 
@@ -53,7 +51,6 @@ export default function TeamCarousel() {
     centerPadding: "0px", // Space between center and adjacent slides
     slidesToShow: 5, // Number of slides to display at once
     speed: 100, // Transition speed in ms
-    ref: sliderRef,
     // afterChange is an event in react slick that detects when the active slide changes, we are using that event to update the displayIndex state
     afterChange: (index: number) => {
       // Reset flippedCardIndex to null when slide changes
@@ -130,7 +127,8 @@ export default function TeamCarousel() {
                   />
                 </div>
               ) : (
-                <div onClick={() => toggleCard(index)}>
+                <div
+                  onClick={() => (displayIndex == 0 ? toggleCard(index) : null)}>
                   <TeamMemberCardFront
                     // passing member object to TeamMemberCardFront
                     memberInfo={member}
