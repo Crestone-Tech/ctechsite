@@ -8,7 +8,7 @@ export const membersData: MemberInfo[] = [
     github: "https://github.com/bluethreadmade",
     linkedIn: "https://www.linkedin.com/in/megan-mcneill/",
     bio: "",
-    avatar: "/team_images/megan.webp",
+    avatar: "/team_images/megan.jpeg",
   },
   {
     name: "Elliott",
@@ -16,7 +16,7 @@ export const membersData: MemberInfo[] = [
     github: "https://github.com/ec-davis",
     linkedIn: "https://www.linkedin.com/in/ec-davis/",
     bio: "",
-    avatar: "/team_images/Elliott_headshot_118_x_150.jpg",
+    avatar: "/team_images/elliott.jpg",
   },
   {
     name: "Johnny",
