@@ -10,35 +10,39 @@ interface TeamLinkBarProps {
 
 export default function TeamLinkBar({ memberInfo }: TeamLinkBarProps) {
   return (
-    <Box 
- >
+    <Box>
       <Tooltip title="GitHub Profile">
         <IconButton
           onClick={() => {
             window.open(memberInfo.github);
           }}
           sx={{
-            minWidth: "40px",  // Set a min size for the icon button
-            maxWidth: "60px",  // Set a max size for the icon button
-            fontSize: "1.5rem",  // Default size for the icon
+            padding: ".25rem",
+            fontSize: "1.5rem", // Default size for the icon
             "& .MuiSvgIcon-root": {
-              fontSize: "inherit",  // Inherit the font size from the IconButton
+              fontSize: "inherit", // Inherit the font size from the IconButton
             },
           }}
         >
-          
           <GitHubIcon />
         </IconButton>
       </Tooltip>
       <Tooltip title="Email me. But this doesn't work yet. Sadness.">
         <IconButton
-        // MS Co-Pilot gave me the code below, but doing this on my machine results in an
-        // opening a new browser tab, with the mailto link in the address bar - but the tab
-        // is blank and nothing really happens.
-        //
-        // onClick={() => {
-        //   window.open(`mailto:${member.email}`);
-        // }}
+          // MS Co-Pilot gave me the code below, but doing this on my machine results in an
+          // opening a new browser tab, with the mailto link in the address bar - but the tab
+          // is blank and nothing really happens.
+          //
+          // onClick={() => {
+          //   window.open(`mailto:${member.email}`);
+          // }}
+          sx={{
+            padding: ".25rem",
+            fontSize: "1.5rem", // Default size for the icon
+            "& .MuiSvgIcon-root": {
+              fontSize: "inherit", // Inherit the font size from the IconButton
+            },
+          }}
         >
           <EmailIcon />
         </IconButton>
@@ -47,6 +51,13 @@ export default function TeamLinkBar({ memberInfo }: TeamLinkBarProps) {
         <IconButton
           onClick={() => {
             window.open(memberInfo.linkedIn);
+          }}
+          sx={{
+            padding: ".25rem",
+            fontSize: "1.5rem", // Default size for the icon
+            "& .MuiSvgIcon-root": {
+              fontSize: "inherit", // Inherit the font size from the IconButton
+            },
           }}
         >
           <LinkedInIcon />

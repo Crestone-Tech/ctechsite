@@ -25,30 +25,79 @@ export default function TeamGridLayout() {
     >
       <SectionTitle sectionTitle="Team" />
       <Box
-        display="flex"
-        flexDirection="row"
-        flexWrap="wrap"
-        justifyContent="center"
+        // display="flex"
+        // flexDirection="row"
+        // flexWrap="wrap"
+        // justifyContent="space-around"
+        className="team-member-card-grid"
+        sx={{
+          // "max-width": "280px",
+          // "min-width": "120px",
+          // aspectRatio: "1 / 1", //sets height/width ratio
+          display: "flex", // Use flexbox for child elements
+          flexDirection: "row", // Stack children vertically
+          flexWrap: "wrap",
+          justifyContent: "space-around", // Distribute the children evenly
+          alignItems: "center", // Center content horizontally
+          padding: { xs: "0.5rem", sm: "1rem", md: "1.5rem" }, // Responsive padding
+          aspectRatio: "1 / 1", // Force the card to be square
+          width: "100%", // Make card flexible
+          position: "relative",
+          "& > :last-child": {
+            "padding-bottom": "0.5rem", // Override paddingBottom for the last child
+          },
+          margin: "1rem",
+        }}
       >
         {membersData.map((member, index) => (
-          <Box 
-            margin="1rem" 
-            key={index}>
+          <Box
+            key={index}
+            className="team-member-card-container"
+            sx={{
+              // "max-width": "280px",
+              // "min-width": "120px",
+              // aspectRatio: "1 / 1", //sets height/width ratio
+              display: "flex", // Use flexbox for child elements
+              flexDirection: "column", // Stack children vertically
+              justifyContent: "center", // Distribute the children evenly
+              alignItems: "center", // Center content horizontally
+              padding: { xs: "0.5rem", sm: "1rem", md: "1.5rem" }, // Responsive padding
+              height: "auto", // Make card flexible
+              position: "relative",
+              "& > :last-child": {
+                "padding-bottom": "0.5rem", // Override paddingBottom for the last child
+              },
+              margin: "1rem",
+            }}
+            onClick={() => toggleCard(index)} // Trigger the flip when clicked
+          >
             {/* Render front or back based on the flippedCardIndex */}
             {flippedCardIndex === index ? (
-              <div onClick={() => toggleCard(index)}>
-                <TeamMemberCardBack
-                  // passing member object to TeamMemberCardBack
-                  memberInfo={member}
-                />
-              </div>
+              <Box
+              // sx={{
+              //   width: "100%",
+              //   height: "100%",
+              //   display: "flex",
+              //   flexDirection: "column",
+              //   justifyContent: "center",
+              //   alignItems: "center",
+              // }}
+              >
+                <TeamMemberCardBack memberInfo={member} />
+              </Box>
             ) : (
-              <div onClick={() => toggleCard(index)}>
-                <TeamMemberCardFront
-                  // passing member object to TeamMemberCardFront
-                  memberInfo={member}
-                />
-              </div>
+              <Box
+                sx={{
+                  width: "100%",
+                  height: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <TeamMemberCardFront memberInfo={member} />
+              </Box>
             )}
           </Box>
         ))}

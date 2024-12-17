@@ -30,15 +30,21 @@ const TeamMemberCardFront: React.FC<TeamMemberCardFrontProps> = ({
     <Card
       className="team-member-card"
       sx={{
-        maxWidth: "280px",
-        minWidth: "200px",
-        aspectRatio: "1 / 1", //sets height/width ratio
+        // "max-width": "280px",
+        // "min-width": "120px",
+        // aspectRatio: "1 / 1", //sets height/width ratio
         display: "flex", // Use flexbox for child elements
         flexDirection: "column", // Stack children vertically
-        justifyContent: "space-between", // Distribute the children evenly
+        justifyContent: "center", // Distribute the children evenly
         alignItems: "center", // Center content horizontally
-        padding: "1rem",
-        height: "auto",
+        padding: { xs: "0.5rem", sm: "1rem", md: "1.5rem" }, // Responsive padding
+        aspectRatio: "1 / 1", // Force the card to be square
+        width: "100%", // Make card flexible
+        position: "relative",
+        "& > :last-child": {
+          "padding-bottom": "0.5rem", // Override paddingBottom for the last child
+        },
+        margin: "1rem",
       }}
     >
       <CardContent
@@ -48,15 +54,17 @@ const TeamMemberCardFront: React.FC<TeamMemberCardFrontProps> = ({
           justifyContent: "center",
           alignItems: "center",
           p: "0",
-          height: "auto", // Let content dictate height
-          flex: 1, // Allow content to fill the available space
+          // height: "auto", // Let content dictate height
+          // flex: 1, // Allow content to fill the available space
+          width: "100%", // Full width
+          height: "100%", // Full height
         }}
       >
         <CardHeader
           title={name}
           sx={{
             textAlign: "center",
-            padding: "0 1rem .5rem",
+            padding: { xs: "0 0.5rem 0.5rem", sm: "0.5rem 1rem 0.5rem" }, // Responsive padding for header
           }}
         >
           <Typography variant="h5">{name}</Typography>
@@ -65,9 +73,11 @@ const TeamMemberCardFront: React.FC<TeamMemberCardFrontProps> = ({
           alt={name}
           src={avatar}
           sx={{
-            width: "6rem",
-            height: "6rem",
-            aspectRatio: "1 / 1",
+            "max-width": { xs: "5rem", sm: "6rem" }, // Responsive avatar size
+            "max-height": { xs: "5rem", sm: "6rem" },
+            // aspectRatio: "1 / 1",
+            width: "100%",
+            height: "100%",
           }}
         />
         <Box
@@ -76,7 +86,7 @@ const TeamMemberCardFront: React.FC<TeamMemberCardFrontProps> = ({
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            margin: "1rem",
+            margin: { xs: "0.5rem", sm: "1rem" }, // Responsive margin
             mb: 0,
           }}
         >

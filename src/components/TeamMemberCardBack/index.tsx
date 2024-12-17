@@ -21,6 +21,7 @@ const TeamMemberCardBack: React.FC<TeamMemberCardBackProps> = ({
         className="team-member-card"
         sx={{
           maxWidth: "280px",
+          minWidth: "200px",
           overflow: "hidden", // Prevents overflow
           display: "flex", // Use flexbox for child elements
           flexDirection: "column", // Stack children vertically
