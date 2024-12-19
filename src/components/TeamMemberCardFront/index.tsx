@@ -30,8 +30,8 @@ const TeamMemberCardFront: React.FC<TeamMemberCardFrontProps> = ({
     <Card
       className="team-member-card"
       sx={{
-        maxWidth: "280px",
-        minWidth: "200px",
+        maxWidth: "400px",
+        minWidth: "250px",
         aspectRatio: "1 / 1", //sets height/width ratio
         display: "flex", // Use flexbox for child elements
         flexDirection: "column", // Stack children vertically
@@ -65,8 +65,8 @@ const TeamMemberCardFront: React.FC<TeamMemberCardFrontProps> = ({
           alt={name}
           src={avatar}
           sx={{
-            width: "6rem",
-            height: "6rem",
+            width: "10rem",
+            height: "10rem",
             aspectRatio: "1 / 1",
           }}
         />
