@@ -31,10 +31,19 @@ export default function TeamGridLayout() {
         justifyContent="center"
       >
         {membersData.map((member, index) => (
-          <Box 
-            margin="1rem" 
-            key={index}>
-            {/* Render front or back based on the flippedCardIndex */}
+          <Box margin="1rem" key={index}>
+            <div onClick={() => toggleCard(index)}>
+              <TeamMemberCardFront
+                // passing member object to TeamMemberCardFront
+                memberInfo={member}
+              />
+            </div>
+
+            {/* Preserving the ability to flip the cards. For MVP, we are simplifying, not flipping the cards
+
+              See Story CT-81 
+            https://crestonetech.atlassian.net/browse/CT-81?atlOrigin=eyJpIjoiYjhmZTk5YjM5NDAwNDhlYjg2MmNhOTczN2NmN2EzNjMiLCJwIjoiaiJ9
+
             {flippedCardIndex === index ? (
               <div onClick={() => toggleCard(index)}>
                 <TeamMemberCardBack
@@ -49,7 +58,7 @@ export default function TeamGridLayout() {
                   memberInfo={member}
                 />
               </div>
-            )}
+            )} */}
           </Box>
         ))}
       </Box>
