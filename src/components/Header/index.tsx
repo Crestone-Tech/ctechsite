@@ -1,5 +1,6 @@
 import Nav from "../Nav";
-import mainLogo from "../../assets/images/mainLogo.jpg";
+// import mainLogo from "../../assets/images/mainLogo.jpg";
+import mainLogo from "../../assets/images/mainLogoLarger.png";
 import logoStroked from "../../assets/images/logoStroked.png";
 import "../Nav/nav.css";
 import "./header.css";
