@@ -49,7 +49,7 @@ export default function TeamCarousel() {
     centerMode: true,
     infinite: true,
     centerPadding: "0px", // Space between center and adjacent slides
-    slidesToShow: 5, // Number of slides to display at once
+    slidesToShow: 3, // Number of slides to display at once
     speed: 100, // Transition speed in ms
     // afterChange is an event in react slick that detects when the active slide changes, we are using that event to update the displayIndex state
     afterChange: (index: number) => {
@@ -87,6 +87,7 @@ export default function TeamCarousel() {
           alignItems: "center",
           display: "flex",
           p: "0",
+          transformOrigin: `center`,
         },
         // target previous and next arrows
         ".slick-prev:before, .slick-next:before": {
@@ -107,6 +108,7 @@ export default function TeamCarousel() {
               totalSlides) %
               totalSlides) -
             Math.floor(totalSlides / 2);
+            
           return (
             <Box
               className="slide-content"

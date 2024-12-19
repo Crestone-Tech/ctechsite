@@ -38,7 +38,7 @@ const TeamMemberCardFront: React.FC<TeamMemberCardFrontProps> = ({
         justifyContent: "center", // Distribute the children evenly
         alignItems: "center", // Center content horizontally
         padding: { xs: "0.5rem", sm: "1rem", md: "1.5rem" }, // Responsive padding
-        aspectRatio: "1 / 1", // Force the card to be square
+        // aspectRatio: "1 / 1", // Force the card to be square
         width: "100%", // Make card flexible
         position: "relative",
         "& > :last-child": {
