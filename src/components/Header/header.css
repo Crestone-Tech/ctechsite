@@ -23,10 +23,12 @@ body {
 }
 
 .main-logo {
-  max-height: 1000px;
+  max-height: 800px;
   width: 100%;
+  object-fit: cover;
   border-bottom-left-radius: 350px;
   opacity: 91%;
+
   /* height: auto; */
 }
 
