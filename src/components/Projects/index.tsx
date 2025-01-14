@@ -1,6 +1,5 @@
 import SectionTitle from "../SectionTitle";
 import Grid from "@mui/material/Grid2";
-import Box from "@mui/material/Box";
 
 //import ProjectInfo and Data
 
@@ -11,11 +10,17 @@ export default function Projects() {
   return (
     <>
       <SectionTitle sectionTitle="Projects" />
-      <Grid container spacing={2}>
+      <Grid container 
+        spacing={{ xs: 2, md: 3 }} 
+        columns={{ xs: 4, sm: 8, md: 12 }}
+        sx={{
+          justifyContent: "center",
+          alignItems: "center",
+        }}>
         {projectsData.map((proj, index) => (
-          <Box margin="1rem" key={index}>
+          <Grid margin="1rem" key={index} size={{ xs: 2, sm: 4, md: 4 }}>
             <ProjectCard projectData={proj} />
-          </Box>
+          </Grid>
         ))}
       </Grid>
     </>

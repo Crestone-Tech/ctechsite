@@ -1,4 +1,3 @@
-import Grid from "@mui/material/Grid2";
 import { Card, CardContent, Typography, CardHeader } from "@mui/material";
 
 // import the CSS
@@ -13,8 +12,6 @@ interface ProjectCardProps {
 
 export default function ProjectCard({projectData}: ProjectCardProps) {
   return (
-    <>
-      <Grid size={{ xs: 12, sm: 6 }}>
         <Card>
           <CardHeader
             title={projectData.name}
@@ -43,7 +40,5 @@ export default function ProjectCard({projectData}: ProjectCardProps) {
             <Typography>{projectData.description}</Typography>
           </CardContent>
         </Card>
-      </Grid>
-    </>
   );
 }
