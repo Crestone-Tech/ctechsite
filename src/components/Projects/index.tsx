@@ -9,16 +9,24 @@ import ProjectCard from "../ProjectCard";
 export default function Projects() {
   return (
     <>
-      <SectionTitle sectionTitle="Projects" />
-      <Grid container 
-        spacing={{ xs: 2, md: 3 }} 
-        columns={{ xs: 4, sm: 8, md: 12 }}
+      <SectionTitle sectionTitle="Projects" style={{ margin: "2rem" }} />
+      <Grid
+        container
+        spacing={{ xs: 3, lg: 6 }}
+        // columns={{ xs: 4, sm: 8, md: 12 }}
         sx={{
           justifyContent: "center",
           alignItems: "center",
-        }}>
+          padding: {
+            xs: "1rem",
+            sm: "2rem",
+            md: "4rem",
+            xl: "8rem",
+          },
+        }}
+      >
         {projectsData.map((proj, index) => (
-          <Grid margin="1rem" key={index} size={{ xs: 2, sm: 4, md: 4 }}>
+          <Grid key={index} size={{ xs: 12, sm: 6, lg: 4, xl: 3 }}>
             <ProjectCard projectData={proj} />
           </Grid>
         ))}
