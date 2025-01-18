@@ -1,12 +1,10 @@
-import useMediaQuery from '@mui/material/useMediaQuery';
-import TeamGridLayout from '../TeamGridLayout';
-import TeamCarousel from '../Carousel';
+import useMediaQuery from "@mui/material/useMediaQuery";
+import TeamGridLayout from "../TeamGridLayout";
+import TeamCarousel from "../Carousel";
 
 export default function TeamSection() {
-  const carouselView = useMediaQuery('(max-width:900px)');
-  console.log('carouselView:', carouselView); // Debugging line
+  const carouselView = useMediaQuery("(max-width:600px)");
+  console.log("carouselView:", carouselView); // Debugging line
 
-  return (
-    carouselView ? <TeamCarousel /> : <TeamGridLayout />
-  );
+  return carouselView ? <TeamCarousel /> : <TeamGridLayout />;
 }
