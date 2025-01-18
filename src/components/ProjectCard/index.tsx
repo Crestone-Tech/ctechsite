@@ -56,7 +56,10 @@ export default function ProjectCard({ projectData }: ProjectCardProps) {
             justifyContent: "center",
             alignItems: "center",
             flexGrow: 1, // Allow this section to grow
-            p: "1rem",
+            padding: {
+              xs: 0,
+              sm: "1rem",
+            },
             pb: 0,
           }}
         >
