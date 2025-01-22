@@ -19,7 +19,7 @@ export default function TeamCarousel() {
   // Function to calculate styles based on the slide-content's data-index (0 being the center -1 -2 etc to the left and 1 2 etc to the right)
   const indexedStyles = (displayIndex: number) => {
     const distance = Math.abs(displayIndex); // absolute value of data-index
-    const scale = distance === 0 ? 1.2 : 1 - 0.0 * distance; // Active slide is scaled up to 1.2, other slides are scalled down in relation to distance
+    const scale = distance === 0 ? .75 : .75 - 0.25 * distance; // Active slide is scaled up to 1.2, other slides are scalled down in relation to distance
     const opacity = distance === 0 ? 1 : 1 - 0.5 * distance; // Active slide has full opacity, other slides have lower opacity in relation to distance
     const zIndex = distance === 0 ? 5 : 5 - distance; // Active slide has a higher z-index, other slides have lower zIndex in relation to distance
 
@@ -53,7 +53,7 @@ export default function TeamCarousel() {
       className="slider-container"
       sx={{
         px: "0rem",
-        py: "10rem",
+        py: "0rem",
         maxWidth: "500px",
         margin: "auto",
         overflow: "visible",
