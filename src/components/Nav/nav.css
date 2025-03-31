@@ -1,10 +1,12 @@
 /* Container */
 .navbar-overlay {
-  position: absolute;
-  top: 40px;
-  left: 40%;
+  position: fixed;
+  top: 25px;
+  right: 0;
   z-index: 10;
+  padding: 10px;
 }
+
 /* Drawer */
 .icon-container {
   position: fixed;
@@ -52,8 +54,8 @@ nav li.active {
 /* Large */
 @media screen and (max-width: 1024px) {
   .navbar-overlay {
-    top: 10px;
-    left: 30%;
+    top: 20px;
+    right: 10px;
   }
 
   .navbar-overlay nav ul li {
@@ -65,8 +67,8 @@ nav li.active {
 /* Medium */
 @media screen and (max-width: 767px) {
   .navbar-overlay {
-    top: 10px;
-    left: 20%;
+    top: 20px;
+    right: 10px;
   }
 
   .navbar-overlay nav ul li {
